@@ -38,13 +38,24 @@ footer {
 .container{
 	width: 550px;
 	height: 700px;
-	padding: 50px;
 	border: 2px solid yellow;
 	border-radius: 10px;
 	background-color:white;
 	color: indigo);
 	font-size: 12px;
-	allign-item: left;
+	
+
+	position: relative;
+	width:1100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	padding: 30px;
+	margin-top: 8%;
+
+
+	
 }
 
 h1{
