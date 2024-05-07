@@ -15,10 +15,10 @@ body{
 
 nav {
       float: left;
-      width: 500px;
+      width: device-width;
       margin: 0px;
-      padding: 5px;
-      background-color: redyellow;
+      padding: 30px;
+      background-color: greenyellow;
       font-size: .9em;
 }
 
