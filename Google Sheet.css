@@ -36,7 +36,7 @@ footer {
 }
 
 .container{
-	width: 550px;
+	
 	height: 700px;
 	border: 2px solid yellow;
 	border-radius: 10px;
@@ -85,7 +85,7 @@ Button{
 
 input{
 	width: 90%;
-	padding: 6px;
+	padding:30px;
 	margin-bottom: 10px;
 }
 
