@@ -13,6 +13,13 @@ body{
 	align-items: center;
 	justify-content: center;
 	background-color: blueblack;
+
+}
+header {
+  text-align: topleft;
+  padding: 5px;
+  color: black;
+	
 }
 footer {
   text-align: left;
