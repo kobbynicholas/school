@@ -23,16 +23,17 @@ nav {
 }
 
 header {
-  text-align: center;
-  padding: 5px;
+  text-align: center-top;
+  padding: 100px;
   color: black;
- width: device-width;	
+ width: 1000px;	
 }
 footer {
-  item-align: bottom;
-  padding: 5px;
+  item-align: center-bottom;
+  padding:100px;
   background-color: greenyellow;
   color: black;
+ width: 1000px;		
 }
 
 .container{
