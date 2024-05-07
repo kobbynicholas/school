@@ -10,8 +10,6 @@ body{
 	height: 100vh;
 	width: device-width;
 	display: flex;
-	align-items: center;
-	justify-content: center;
 	background-color: blueblack;
 
 }
