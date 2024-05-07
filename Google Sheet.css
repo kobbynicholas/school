@@ -23,13 +23,13 @@ nav {
 }
 
 header {
-  text-align: center-top;
+  text-align: center;
   padding: 100px;
   color: black;
   width: 1000px;	
 }
 footer {
-  item-align: center-bottom;
+  item-align: bottom;
   padding:100px;
   background-color: greenyellow;
   color: black;
