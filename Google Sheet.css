@@ -23,10 +23,10 @@ nav {
 }
 
 header {
-  text-align: topleft;
+  text-align: center;
   padding: 5px;
   color: black;
-	
+ width: device-width;	
 }
 footer {
   item-align: bottom;
