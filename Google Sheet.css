@@ -26,14 +26,17 @@ header {
   text-align: center;
   padding: 100px;
   color: black;
-  width: 1000px;	
+  width: 1000px;
+  justify-content: center;
+	
 }
 footer {
   item-align: bottom;
   padding:100px;
   background-color: greenyellow;
   color: black;
-  width: 1000px;		
+  width: 1000px;
+  justify-content: center;	
 }
 
 .container{
