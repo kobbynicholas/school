@@ -20,7 +20,7 @@ header {
 	
 }
 footer {
-  text-align: left;
+  item-align: bottom;
   padding: 5px;
   background-color: greenyellow;
   color: black;
