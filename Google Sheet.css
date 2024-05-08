@@ -73,8 +73,6 @@ footer {
 	margin-top: 8%;	
 }
 
-
-
 h1{
 	margin-bottom: 10px;
 	font-size: 72px;
@@ -86,14 +84,11 @@ h4{
 	color: black;
 	align-items: center;
 }
-
-}
 h8{
 	margin-bottom: 10px;
 	font-size: 12px;
 	color: white;
 }
-
 
 Button{
 	width: 60%;
