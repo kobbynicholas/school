@@ -32,7 +32,7 @@ header {
 }
 footer {
   item-align: bottom;
-  padding:30px;
+  padding:0px;
   background-color: greenyellow;
   color: black;
   width: 500px;
@@ -97,13 +97,13 @@ Button{
 
 input{
 	width: 90%;
-	padding:30px;
+	padding:80px;
 	margin-bottom: 10px;
 }
 
 textarea{
-	width: 60%;
-	padding: 40px;
+	width: 90%;
+	padding:80px;
 }
 #submit{
 	border: none;
