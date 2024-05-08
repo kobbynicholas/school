@@ -40,8 +40,7 @@ footer {
   justify-content: center;	
 }
 
-.container{
-	
+.container{	
 	height: 700px;
 	border: 2px solid yellow;
 	border-radius: 10px;
@@ -49,7 +48,7 @@ footer {
 	color: indigo;
 	font-size: 12px;
 	position: center;
-	width:600px;
+	width:device-width;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -65,7 +64,7 @@ footer {
 	color: indigo);
 	font-size: 12px;
 	position: center;
-	width:600px;
+	width:device-width;
 	display: flex;
 	justify-content: center;
 	align-items: center;
