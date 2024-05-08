@@ -46,7 +46,7 @@ footer {
 	border: 2px solid yellow;
 	border-radius: 10px;
 	background-color:white;
-	color: indigo);
+	color: indigo;
 	font-size: 12px;
 	position: center;
 	width:600px;
@@ -92,7 +92,7 @@ h8{
 
 Button{
 	width: 60%;
-	padding: 110px;
+	padding:70px;
 	margin-bottom: 5px;
 
 input{
