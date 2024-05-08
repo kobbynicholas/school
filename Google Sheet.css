@@ -58,7 +58,6 @@ footer {
 .container2{
 	
 	height: 700px;
-	border: 2px solid red;
 	border-radius: 10px;
 	background-color: white;
 	color: indigo);
@@ -69,7 +68,7 @@ footer {
 	justify-content: center;
 	align-items: center;
 	flex-wrap: wrap;
-	margin-top: 30%;	
+	margin-top: 0%;	
 }
 
 h1{
