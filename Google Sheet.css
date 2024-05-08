@@ -32,10 +32,10 @@ header {
 }
 footer {
   item-align: bottom;
-  padding:100px;
+  padding:30px;
   background-color: greenyellow;
   color: black;
-  width: 500px;
+  width: 700px;
   height: 100px;	
   justify-content: center;	
 }
