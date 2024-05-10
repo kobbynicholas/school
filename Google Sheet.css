@@ -34,6 +34,7 @@ header {
 	background-position: center;
 	min-height: 100px;
 	<div class="item active" style="background-image: url(../../books.jpg);">
+	background-image: url("img/books.jpeg");
 }
 
 logo{
