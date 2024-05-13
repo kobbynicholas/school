@@ -97,7 +97,7 @@ background-color:#fff;
 .container2{	
 	height: 700px;
 	border-radius: 10px;
-	background-color: whiteblue;
+	background-color: darkblue;
 	color: indigo);
 	font-size: 12px;
 	position: center;
@@ -107,7 +107,7 @@ background-color:#fff;
 	align-items: center;
 	flex-wrap: wrap;
 	margin-top: 0%;	
-	 padding: 30px;
+	padding: 30px;
 }
 
 .container3{	
