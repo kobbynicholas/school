@@ -1,4 +1,4 @@
-
+b
 *{
 	box-sizing: border-box;
 	padding: 0;
@@ -94,11 +94,10 @@ background-color:#fff;
 	margin-bottom: 10px;
 	
 }
-.container2{
-	
+.container2{	
 	height: 700px;
 	border-radius: 10px;
-	background-color: white;
+	background-color: whiteblue;
 	color: indigo);
 	font-size: 12px;
 	position: center;
