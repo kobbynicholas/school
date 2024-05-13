@@ -41,7 +41,8 @@ logo{
   	height: 50px;	
 }
 footer {
-  item-align: bottom;
+  item-align: center;
+  text-align: center;
   padding:100px;
   background-color: black;
   color: white;
