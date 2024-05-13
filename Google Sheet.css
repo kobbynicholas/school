@@ -46,8 +46,8 @@ footer {
   padding:100px;
   background-color: black;
   color: white;
-  width: 1500px;
-  height: 100px;	
+  width: 500px;
+  height: 40px;	
   justify-content: center;	
 }
 
@@ -98,11 +98,11 @@ background-color:#fff;
 	height: 700px;
 	border: 2px solid black;
 	border-radius: 10px;
-	background-color: blue;
-	color: indigo);
+	background-color: black;
+	color: white;
 	font-size: 12px;
 	position: center;
-	width:device-width;
+	width:500px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
