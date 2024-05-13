@@ -96,8 +96,9 @@ background-color:#fff;
 }
 .container2{	
 	height: 700px;
+	border: 2px solid black;
 	border-radius: 10px;
-	background-color: darkblue;
+	background-color: blue;
 	color: indigo);
 	font-size: 12px;
 	position: center;
