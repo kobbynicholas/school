@@ -10,7 +10,7 @@ body{
 	height: 100vh;
 	width: device-width;
 	display: flex;
-	
+	justify-content: center;
 }
 
 logo{
