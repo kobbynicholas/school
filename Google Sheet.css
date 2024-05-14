@@ -1,7 +1,7 @@
-b
+
 *{
 	box-sizing: border-box;
-	padding: 0;
+	padding: 30;
 	margin: 0;
 	font-family: 'poppins', sans-serif;
 	font-size: 18px;
@@ -102,7 +102,7 @@ background-color:#fff;
 	color: white;
 	font-size: 12px;
 	position: center;
-	width:500px;
+	width:device-width;
 	display: flex;
 	justify-content: center;
 	align-items: center;
