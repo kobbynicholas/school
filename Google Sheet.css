@@ -46,8 +46,8 @@ footer {
   padding:100px;
   background-color: white;
   color: black;
-  width: 500px;
-  height: 40px;	
+  width: device-width;
+  height: 20px;	
   justify-content: center;	
 }
 
