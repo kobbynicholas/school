@@ -99,12 +99,11 @@ background-color:#fff;
 	border: 2px solid wine;
 	border-radius: 10px;
 	background-color: pink;
-	color: white;
+	color: black;
 	font-size: 12px;
 	width: 450px;
 	display: flex;
-	justify-content: center;
-	margin-top: 0%;	
+	margin-top: 10%;	
 	padding: 30px;
 }
 
