@@ -5,6 +5,8 @@
 	margin: 0;
 	font-family: 'poppins', sans-serif;
 	font-size: 18px;
+	background-color:linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.5),rgba(0,0,0,0.3));
+}
 }
 body{
 	height: 100vh;
