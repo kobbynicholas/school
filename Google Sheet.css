@@ -7,10 +7,15 @@
 	font-size: 18px;
 }
 body{
-	height: 100vh;
-	width: 1500px;
-	display: flex;
-	justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+    line-height: 1.5;
+    min-height: 100vh;
+    background: #f3f3f3;
+    flex-direction: column;
+    margin: 0;
 }
 
 logo{
@@ -31,7 +36,17 @@ header {
 	background-image:linear-gradient(rgba(0,0,0,0.8),rgba(10,9,8,7.6),rgba(0,0,0,0.3));
 	height: 30vh;
 	background-size: cover;
-	background-position: center;	
+	background-position: center;
+	color: #4CAF50;
+}
+label {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    text-align: left;
+    color: #555;
+    font-weight: bold;
 }
 
 logo{
@@ -149,14 +164,25 @@ h8{
 }
 
 Button{
-	width: 60%;
-	padding:20px;
-	margin-bottom: 30px;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    background-color: #4CAF50;
+    width: 100%;
+    font-size: 16px;
 
 input{
-	width: 90%;
-	padding:80px;
-	margin-bottom: 40px;
+    display: block;
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 5px;
 }
 
 textarea{
@@ -174,4 +200,9 @@ textarea{
 }
 #submit:hover{
 	background-color: #e4aad7;
+}
+.wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
