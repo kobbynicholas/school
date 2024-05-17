@@ -1,36 +1,47 @@
 <!DOCTYPE html>
 <html>
-<head><link rel="stylesheet" href="Google Sheet.css">
-	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+
+<head>
+    <title>HTML Login Form</title>
+    <link rel="stylesheet" 
+          href="style.css">
 </head>
 
-<div class="container">
-		
-		<a href="year 4.html" target="_blank"> YEAR 4 </a>
+<body>
+    <div class="main">
+        <h1>GeeksforGeeks</h1>
+        <h3>Enter your login credentials</h3>
+        <form action="">
+            <label for="first">
+                  Username:
+              </label>
+            <input type="text" 
+                   id="first"
+                   name="first" 
+                   placeholder="Enter your Username" required>
 
-		
-		<h4>YEAR 4</h4>
-		
-		<img src="How.jpg" width="110" height="100" align-item="center">
-		<img src="NII.jpg" width="100" height="100" align-item="center">
-	
-		
-		<form method="post" action="https://script.google.com/macros/s/AKfycbwoDcTz3Ch9MR02Dgsl18F_Dt5ZPlgcrKB3-vMEJHvfDdnSIroAZU5k0ApqPuIiWJuZ2A/exec" name="contact-form">
-			<p></p>	
-		<p></p>	
-			Name <p><input type="search" name="name" placeholder="Search Student Name"></p>
-			Class Ass.<p><input type="text" name="Class Ass." placeholder="Class Ass. (100%)"></p>
-			Mid-Term<p><input type="text" name="Mid-Term" placeholder="Mid-Term (100%)"></p>
-			Exam<p><input type="text" name="Main Exams" placeholder="Main Exams (100%)"></p>
-			<p></p>
-			<p><input type="submit" value="Submit" id="submit"></p>	
-		</form>	
+            <label for="password">
+                  Password:
+              </label>
+            <input type="password"
+                   id="password" 
+                   name="password" 
+                   placeholder="Enter your Password" required>
 
-		
-	</div>
-	</p>
-	
-	<script src="Google Sheet.js"></script>
-	</body>
-	
+            <div class="wrap">
+                <button type="submit"
+                        onclick="solve()">
+                    Submit
+                </button>
+            </div>
+        </form>
+        <p>Not registered? 
+              <a href="#" 
+               style="text-decoration: none;">
+                Create an account
+            </a>
+        </p>
+    </div>
+</body>
+
 </html>
