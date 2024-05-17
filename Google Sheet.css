@@ -84,7 +84,7 @@ background-color:#fff;
 	height: 400px;
 	border: 2px solid yellow;
 	border-radius: 10px;
-	background-image:linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.5),rgba(0,0,0,0.3)), url(../../aa.jpg);
+	background-image:linear-gradient(rgba(0,0,0,0.8),rgba(10,9,8,7.6),rgba(0,0,0,0.3)), url(../../aa.jpg);
 	font-size: 12px;
 	position: center;
 	width:1500px;
