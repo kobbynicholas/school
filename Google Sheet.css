@@ -29,10 +29,10 @@ nav {
 
 header { 
 	background-image: url(../../books.jpeg);
-	height: 50vh;
+	height: 30vh;
 	background-size: cover;
 	background-position: center;
-	min-height: 50px;
+	
 	
 }
 
