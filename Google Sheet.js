@@ -3,7 +3,7 @@ const scriptURL = 'https://script.google.com/macros/s/AKfycbwoDcTz3Ch9MR02Dgsl18
 
 const form = document.forms['contact-form']
 
-form.addEventListener('submit', e => {
+form.addEventListener('submit', f => {
   e.preventDefault()
   fetch(scriptURL, { method: 'POST', body: new FormData(form)})
   .then(response => alert("Thank you! marks submitted successfully." ))
