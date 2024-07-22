@@ -23,13 +23,14 @@ body {
 
 h1 {
     color: #4CAF50;
+}
 
 
 #submit{
 	border: none;
 	background-color: rgb(107, 8, 66);
 	color: rgb(247, 246, 246);
-	width: 200px;
+	width: 100px;
 	margin-top: 10px;
 	border-radius: 7px;
 }
@@ -37,8 +38,6 @@ h1 {
 	background-color: #e4aad7;
 }
 .wrap {
-
-
 	
 }
 
