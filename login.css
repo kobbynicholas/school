@@ -25,6 +25,11 @@ h1 {
     color: #4CAF50;
 }
 
+h3 {
+    color: green;
+}
+
+
 label {
     display: block;
     width: 100%;
