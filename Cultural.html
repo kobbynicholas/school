@@ -162,32 +162,6 @@ Year of Student <input list="level"  name="Year"   placeholder="Slelect Year." r
 		</div>	
 		</div>
 		</div>
-
-
-
-<select id="mySelectList">
-    </select>
-	
-    <script>
-      (function () {
-        google.script.run.withSuccessHandler(
-          function (selectList) {
-            var select = document.getElementById("mySelectList");
-            for( var i=0; i<selectList.length; i++ ) {
-              var option = document.createElement("option");
-              option.text = selectList[i][0];
-              select.add(option);
-            }
-          }
-        ).getSelectList();
-      }());
-    </script>
-
-
-
-	
-
-
 	
 
 	<section>
