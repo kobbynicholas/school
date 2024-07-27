@@ -1,5 +1,5 @@
 
-const scriptURL = 'https://script.google.com/macros/s/AKfycbwoDcTz3Ch9MR02Dgsl18F_Dt5ZPlgcrKB3-vMEJHvfDdnSIroAZU5k0ApqPuIiWJuZ2A/exec'
+const scriptURL = 'https://script.google.com/macros/s/AKfycbxnpUM26Q7YXzaN27CsQQ7FOh1AdNSSmS1-3ggpM_csYAlO_nMyzEQEUztVKY-vvUBqQQ/exec'
 
 const form = document.forms['remarks-form']
 
