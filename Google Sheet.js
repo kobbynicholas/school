@@ -10,3 +10,10 @@ form.addEventListener('submit', e => {
   .then(() => { window.location.reload(); })
   .catch(error => console.error('Error!', error.message))
 })
+
+
+$('form').on('submit', function(e){
+    var submitButton = $(this).find('input[type=submit]');
+    $(this).append('<span>submitting...</span>');//Replace with whatever you want
+    submitButton.css('display', 'none');
+});
