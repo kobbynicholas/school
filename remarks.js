@@ -12,3 +12,30 @@ form.addEventListener('submit', e => {
   .then(() => { window.location.reload(); })
   .catch(error => console.error('Error!', error.message))
 })
+
+
+
+
+$("#content form").submit(function(e) {
+    var $this = $(this);
+    $('<img />', {
+        'src': 'loading1.gif',
+        'alt': 'submitting form',
+        'class': 'loading',
+        'style': 'display: block; margin: 0 auto;' // Use a class instead
+    }).appendTo(this);
+
+    $this.find(':submit').hide();
+
+    e.preventDefault();
+
+    $.ajax({
+        type: $this.attr('method') || 'get',
+        url: $this.attr('action') || window.location,
+        data: $this.serialize(),
+        success: function(response) {
+            $(this).find('.loading').remove();
+            $(this).find(':submit').show();
+        }
+    });
+});
