@@ -111,6 +111,12 @@ background-color:#fff;
 }
 
 
-.progress, .alert {
-margin: 15px;
-border-radius: 25px;}
+#loading {
+    background: url('spinner.gif') no-repeat center center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 9999999;
+}
