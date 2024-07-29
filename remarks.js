@@ -9,17 +9,6 @@ form.addEventListener('submit', e => {
   
   fetch(scriptURL, { method: 'POST', body: new FormData(form)})
 
-
-function hideLoader() {
-    $('#loading').hide();
-}
-
-$(window).ready(hideLoader);
-
-// Strongly recommended: Hide loader after 20 seconds, even if the page hasn't finished loading
-setTimeout(hideLoader, 3 * 1000);
-
-
     
   .then(response => alert("Thank you! Student remarks submitted successfully." ))
   .then(() => { window.location.reload(); })
