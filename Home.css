@@ -112,7 +112,7 @@ background-color:#fff;
 
 
 #loading {
-    background: url('spinner.gif') no-repeat center center;
+    background: url('loading1.gif') no-repeat center center;
     position: absolute;
     top: 0;
     left: 0;
