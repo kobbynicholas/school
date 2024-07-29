@@ -17,7 +17,7 @@ function showDiv() {
   document.getElementById('loadingGif').style.display = "block";
   setTimeout(function() {
     document.getElementById('loadingGif').style.display = "none";
-    document.getElementById('showme').style.display = "block";
+    document.getElementById('showme').style.display = "flex";
   },5000);
    
 }
