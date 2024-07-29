@@ -111,3 +111,6 @@ background-color:#fff;
 }
 
 
+.progress, .alert {
+margin: 15px;
+border-radius: 25px;}
