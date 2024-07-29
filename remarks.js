@@ -17,3 +17,12 @@ form.addEventListener('submit', e => {
 
 
 
+
+
+
+$('#usp_form').submit(function() {
+    // javascript way
+    document.getElementById("loadingDiv").style.display = 'block';
+    // jquery way
+    $('#loadingDiv').show();  
+});
