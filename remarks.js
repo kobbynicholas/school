@@ -14,43 +14,11 @@ form.addEventListener('submit', e => {
 })
 
 
+function hideLoader() {
+    $('#loading').hide();
+}
 
-var $progress = $('.progress');
-var $progressBar = $('.progress-bar');
-var $quantity = $('.quantity');
+$(window).ready(hideLoader);
 
-$progressBar.animate({width: "50"}, 100);
-
-
-
-
-
-
-
-
-
-
-
-$("#content form").submit(function(e) {
-    var $this = $(this);
-    $('<img />', {
-        'src': 'loading1.gif',
-        'alt': 'submitting form',
-        'class': 'loading',
-        'style': 'display: block; margin: 0 auto;' // Use a class instead
-    }).appendTo(this);
-
-    $this.find(':submit').hide();
-
-    e.preventDefault();
-
-    $.ajax({
-        type: $this.attr('method') || 'get',
-        url: $this.attr('action') || window.location,
-        data: $this.serialize(),
-        success: function(response) {
-            $(this).find('.loading').remove();
-            $(this).find(':submit').show();
-        }
-    });
-});
+// Strongly recommended: Hide loader after 20 seconds, even if the page hasn't finished loading
+setTimeout(hideLoader, 20 * 1000);
