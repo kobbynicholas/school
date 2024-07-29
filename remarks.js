@@ -22,6 +22,6 @@ function showDiv() {
   setTimeout(function() {
     document.getElementById('loadingGif').style.display = "none";
     document.getElementById('showme').style.display = "block";
-  },2000);
+  },5000);
    
 }
