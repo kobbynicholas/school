@@ -17,7 +17,7 @@ form.addEventListener('submit', e => {
 
 
 function showDiv() {
-  document.getElementById('Login').style.display = "none";
+  document.getElementById('submit').style.display = "none";
   document.getElementById('loadingGif').style.display = "block";
   setTimeout(function() {
     document.getElementById('loadingGif').style.display = "none";
