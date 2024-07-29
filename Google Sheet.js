@@ -12,8 +12,12 @@ form.addEventListener('submit', e => {
 })
 
 
-$('form').on('submit', function(e){
-    var submitButton = $(this).find('input[type=submit]');
-    $(this).append('<span>submitting...</span>');//Replace with whatever you want
-    submitButton.css('display', 'none');
-});
+function showDiv() {
+  document.getElementById('submit').style.display = "none";
+  document.getElementById('loadingGif').style.display = "block";
+  setTimeout(function() {
+    document.getElementById('loadingGif').style.display = "none";
+    document.getElementById('showme').style.display = "block";
+  },5000);
+   
+}
