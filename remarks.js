@@ -16,13 +16,12 @@ form.addEventListener('submit', e => {
 })
 
 
-
-
-
-
-$('#usp_form').submit(function() {
-    // javascript way
-    document.getElementById("loadingDiv").style.display = 'block';
-    // jquery way
-    $('#loadingDiv').show();  
-});
+function showDiv() {
+  document.getElementById('Login').style.display = "none";
+  document.getElementById('loadingGif').style.display = "block";
+  setTimeout(function() {
+    document.getElementById('loadingGif').style.display = "none";
+    document.getElementById('showme').style.display = "block";
+  },2000);
+   
+}
