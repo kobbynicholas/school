@@ -15,6 +15,21 @@ form.addEventListener('submit', e => {
 
 
 
+var $progress = $('.progress');
+var $progressBar = $('.progress-bar');
+var $quantity = $('.quantity');
+
+$progressBar.animate({width: "50"}, 100);
+
+
+
+
+
+
+
+
+
+
 
 $("#content form").submit(function(e) {
     var $this = $(this);
