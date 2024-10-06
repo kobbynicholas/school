@@ -5,7 +5,7 @@ body {
     justify-content: center;
     font-family: sans-serif;
     line-height: 1.5;
-    min-height: 100vh;
+    min-height: 150vh;
     background: #f3f3f3;
     flex-direction: column;
     margin: 0;
@@ -22,7 +22,7 @@ body {
 }
 
 .main2 {
-    background-color: #fff;
+    background-color: black-red;
     border-radius: 15px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     padding: 10px 20px;
@@ -32,7 +32,7 @@ body {
 }
 
 .main3 {
-    background-color: #fff;
+    background-color: black-blue;
     border-radius: 15px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     padding: 10px 20px;
