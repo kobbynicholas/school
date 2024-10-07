@@ -22,7 +22,7 @@ body {
 }
 
 .main2 {
-    background-color: black-red;
+    background-color: black;
     border-radius: 15px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     padding: 10px 20px;
@@ -32,7 +32,7 @@ body {
 }
 
 .main3 {
-    background-color: black-blue;
+    background-color: yellow;
     border-radius: 15px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     padding: 10px 20px;
