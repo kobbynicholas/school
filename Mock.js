@@ -2,7 +2,7 @@
 const scriptURL = 'https://script.google.com/macros/s/AKfycbzWQ0ux2Cg41n14tSgMLtj7iPbQIW_tmzS26gVpAamkxUr1tMzeSa2cTGgZqwSahsQV/exec'
 
 const form = document.forms['contact-form']
-
+ 
 form.addEventListener('submit', e => { 
   e.preventDefault()
   fetch(scriptURL, { method: 'POST', body: new FormData(form)})
