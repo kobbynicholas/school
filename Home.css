@@ -11,6 +11,11 @@ body {
     margin: 0;
 }
 
+header{
+	color: black;
+}
+
+
 .main {
     background-color: #fff;
     border-radius: 15px;
