@@ -47,8 +47,8 @@ body {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     padding: 10px 20px;
     transition: transform 0.2s;
-    width: 1000px;
-    hight: 500px;
+    width: 900px;
+    hight: 300px;
     text-align: center;
     color: white;
 }
