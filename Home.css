@@ -9,7 +9,8 @@ body {
     background: #f0f0f0;
     flex-direction: column;
     margin: 0;
-	font-color: white;
+    font-color: white;
+	color: white;
 }
 
 header{
