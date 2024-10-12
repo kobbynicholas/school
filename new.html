@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+     label {
+    display: inline-block;
+    width: 150px;
+    }   
+    </style>
+    
+  <base target="_top">
+  <script>
+    function submitForm() {
+      google.script.run.appendRowFromFormSubmit(document.getElementById("feedbackForm"));
+      document.getElementById("form").style.display = "none";
+      document.getElementById("thanks").style.display = "block";
+    }
+  </script>
+  </head>
+  <body>
+    
+  <datalist id="datalist">
+<? data.forEach(e => { ?>
+  <option value="<?= e ?>">
+<? }); ?>
+</datalist>
+    
+  <div>
+  <div id="form">
+  <h1>Record Interaction</h1>
+  <form id="feedbackForm">
+    <label for="name">Parent Name</label>
+    <input type="text" id="name" name="name" list="datalist"><br><br>
+
+    <label for="doi">Date of Interaction</label>
+    <input id="today" type="date" name="doi"><br><br>
+
+    <label for="feedback">Interaction Summary</label>
+    <textarea rows=4 cols=35 id="feedback" name="feedback">Enter Interaction Summary Here...
+         </textarea><br><br>
+
+    <div>
+      <label for="temperature">Likely Candidate?</label><br>
+      <input type="radio" id="Hot" name="temperature" value="Hot">
+      <label for="yes">Hot</label><br>
+      <input type="radio" id="Warm" name="temperature" value="Warm">
+      <label for="yes">Warm</label><br>
+      <input type="radio" id="Tepid" name="temperature" value="Tepid">
+      <label for="yes">Tepid</label><br>
+      <input type="radio" id="Cold" name="temperature" value="Cold">
+      <label for="no">Cold</label><br><br>
+
+      <input type="button" value="Submit Interaction" onclick="submitForm();">
+  </form>
+  </div>
+  </div>
+  <div id="thanks" style="display: none;">
+    <p>Thank you for speaking to our customers!</p>
+  </div>
+  </body>
+</html>
