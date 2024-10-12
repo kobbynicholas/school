@@ -20,7 +20,7 @@
   <body>
     
   <datalist id="datalist">
-  <?! 
+
   var url = "https://script.google.com/macros/s/AKfycbzhpllkbt8lw49rLGfpGjetmQE8hn_nOzL2QSVbkt8ywFncrVdmSqStiAZAKFACj7O2VQ/exec"; 
   var ss = SpreadsheetApp.openByUrl(url);
   var ws = ss.getSheetByName("Sheet1");
@@ -30,7 +30,7 @@
   console.info("hello read the data");
   for (var i = 0; i < datalist.length; i++) { !?>
   <option value="<?= datalist[i] ?>">
-  <?! } !?>
+
 </datalist>
     
   <div>
