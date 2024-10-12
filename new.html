@@ -20,9 +20,17 @@
   <body>
     
   <datalist id="datalist">
-<? data.forEach(e => { ?>
-  <option value="https://script.google.com/macros/s/AKfycbzhpllkbt8lw49rLGfpGjetmQE8hn_nOzL2QSVbkt8ywFncrVdmSqStiAZAKFACj7O2VQ/exec">
-<? }); ?>
+  <?! 
+  var url = "https://script.google.com/macros/s/AKfycbzhpllkbt8lw49rLGfpGjetmQE8hn_nOzL2QSVbkt8ywFncrVdmSqStiAZAKFACj7O2VQ/exec"; 
+  var ss = SpreadsheetApp.openByUrl(url);
+  var ws = ss.getSheetByName("Sheet1");
+  var rng = ws.getRange('a2:a')
+  var rangeArray = rng.getValues();
+  var filArray = rangeArray.filter(function (el) {return el[0] != ""}).flat();  // Modified
+  console.info("hello read the data");
+  for (var i = 0; i < datalist.length; i++) { !?>
+  <option value="<?= datalist[i] ?>">
+  <?! } !?>
 </datalist>
     
   <div>
