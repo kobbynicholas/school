@@ -10,7 +10,13 @@ body {
     flex-direction: column;
     margin: 0;
 }
- 
+
+marquee{
+	color: white;
+}
+
+
+
 .main {
     background-color: white;
     border-radius: 15px;
