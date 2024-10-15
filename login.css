@@ -64,9 +64,9 @@ marquee{
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     padding: 10px 10px;
     transition: transform 0.2s;
-    width: 400px;
+    width: 500px;
     hight: 300px;
-    text-align: center;
+    text-align: left;
     hrf-color: #65ff01;
 }
 
