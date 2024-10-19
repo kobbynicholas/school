@@ -63,7 +63,21 @@
 	
 </body>	
 	<a href ="https://drive.google.com/drive/folders/11vOyFgAmRtjiPziu0SD3NsZte5ReSQ35?usp=drive_link" attributes-list download ="4 HANEN.pdf" > DOWNLOAD REPORT </a> 
-<style>
+
+	
+	
+	var path= "https://drive.google.com/drive/folders/11vOyFgAmRtjiPziu0SD3NsZte5ReSQ35?usp=drive_link"; 
+    var save = document.createElement('a');  
+    save.href = filePath; 
+    save.download = "4 HANEN.pdf"; 
+    save.target = '_blank'; 
+    document.body.appendChild(save);
+    save.click();
+    document.body.removeChild(save);
+	
+	
+	
+	<style>
 	body{
 		background:url("books.jpg");
 		background-repeat:no-repeat;
