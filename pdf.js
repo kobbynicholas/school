@@ -2,7 +2,7 @@ document.getElementById('downloadBtn').addEventListener('click', function() {
     const inputValue = document.getElementById('inputValue').value;
 
     // Construct the URL for the PDF based on the input value
-    const pdfUrl = `https://drive.google.com/drive/folders/11vOyFgAmRtjiPziu0SD3NsZte5ReSQ35?usp=drive_link/to/pdf/${inputValue}.pdf`; // Adjust the path as needed
+    const pdfUrl = `https://drive.google.com/uc?export=download&id=${inputValue}`; // Adjust the path as needed
 
     // Create a temporary link element
     const link = document.createElement('a');
