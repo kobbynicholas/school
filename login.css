@@ -12,7 +12,7 @@ body {
     color: white;
 }
 
-footer {
+.footer {
     background-color: white;
     border-radius: 15px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
