@@ -14,11 +14,11 @@ body {
 
 .footer {
     background-color: white;
-    border-radius: 0px;
+    border-radius: 15px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     padding: 10px 20px;
     transition: transform 0.2s;
-    width: device-width;
+    width: 1000PX;
     hiegth: 500px;
     text-align: center;
 }
