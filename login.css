@@ -29,17 +29,15 @@ marquee{
 
 
 .background {
-    background-color: pink;
+    background-color: black-red;
     border-radius: 15px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     padding: 10px 20px;
     transition: transform 0.2s;
     width: 1000px;
     text-align: center;
+    justify-content: center;
 }
-
-
-
 
 
 .main {
