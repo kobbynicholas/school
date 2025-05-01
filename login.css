@@ -84,14 +84,14 @@ marquee{
 }
 
 .down2 {
-    background-color: #f5bae9;
+    background-color: #390450;
     border-radius: 15px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     padding: 10px 10px;
     transition: transform 0.2s;
     width: 500px;
     hight: 300px;
-    text-align: left;
+    text-align: center;
     hrf-color: #65ff01;
 }
 
