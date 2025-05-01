@@ -90,7 +90,7 @@ marquee{
     padding: 10px 10px;
     transition: transform 0.2s;
     width: 500px;
-    hight: 300px;
+    hight: 150px;
     text-align: center;
     hrf-color: #65ff01;
 }
