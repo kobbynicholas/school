@@ -84,7 +84,7 @@ marquee{
 }
 
 .down2 {
-    background-color: #00FF00;
+    background-color: #dd04bc;
     border-radius: 15px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     padding: 10px 10px;
@@ -92,7 +92,7 @@ marquee{
     width: 500px;
     hight: 150px;
     text-align: center;
-    hrf-color: #00FF00;
+    hrf-color: #dd04bc;
 }
 
 
