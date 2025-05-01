@@ -88,7 +88,7 @@ marquee{
     border-radius: 15px;
     box-shadow: 0 0 20px rgba(0, 0, 1, 0.5);
     padding: 10px 10px;
-    transition: transform 0.2s;
+    transition: transform 2.2s;
     width: 500px;
     hight: 100px;
     text-align: center;
