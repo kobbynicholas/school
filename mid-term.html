@@ -158,14 +158,30 @@ Year of Student <input list="level"  name="Year"   placeholder="Select Year." re
         
       			Term <div><input type="text" name="Term" value="Term 2"></p></div>	
 		
-			<div><p><input type="submit" value="Submit" id="submit"  onclick="showDiv()"></p></div>
+			<div><p><input type="submit" value="Add" id="submit"  onclick="showDiv()"></p></div>
 
 
 <div id="showme" style="display:none;"></div>
 <div id="loadingGif" style="display:none"><img src="load.gif"  width="80" height="70" align-item="center" ></div>
 
-				
-		</form>
+</form>
+
+
+<table id="my-table">
+  <thead>
+    <tr>
+      <th>Level</th>    
+      <th>Name</th>
+      <th>Marks 100%</th>
+      <th>Acc Year</th>
+      <th>Term</th> 
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Table rows will be dynamically added here -->
+  </tbody>
+</table>
+	
 		</div>	
 		</div>
 		</div>
