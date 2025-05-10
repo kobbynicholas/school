@@ -191,7 +191,7 @@ Year of Student <input list="level"  name="Year"   placeholder="Select Year." re
 const form = document.getElementById("form");
 const table = document.getElementById("myTable");
 
-    form.addEventListener("submit", (event) => {
+    form.addEventListener("Add", (event) => {
     event.preventDefault(); // Prevent form from submitting (default behavior)
 
     const Subject = document.getElementById("Subject").value;
@@ -210,12 +210,12 @@ const table = document.getElementById("myTable");
     const Acc. YearCell = newRow.insertCell();
     const TermCell = newRow.insertCell();	
 
-    SubjectCell.textContent = name;
-    LevelCell.textContent = email;
-    NameCell.textContent = name;
-    MarksCell.textContent = email;
-   Acc. YearCell.textContent = name;
-    TermCell.textContent = email;
+    SubjectCell.textContent = Subject;
+    LevelCell.textContent = Level;
+    NameCell.textContent = Name;
+    MarksCell.textContent = Marks;
+    Acc. YearCell.textContent = Acc. Year;
+    TermCell.textContent = Term;
 	
 });
 </script>
@@ -225,7 +225,6 @@ const table = document.getElementById("myTable");
 
 
 	
-
 	<section>
 	<footer>
 	<p><h6>HILLTOP INT. BRITISH SCHOOL</p></h6>
