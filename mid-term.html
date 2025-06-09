@@ -145,7 +145,7 @@ Year of Student <input list="level"  name="Year"   placeholder="Select Year." re
 <option value="MACMARTIN WHAJAH">
 <option value="LEMUEL AMOAH">	
 <option value="ABIDAH SOUNG YENTARGIT">
-<option value="">
+<option value="ZOE YAMSON">
 <option value="">
 <option value="">
 <option value="">	
@@ -166,64 +166,6 @@ Year of Student <input list="level"  name="Year"   placeholder="Select Year." re
 </form>
 
 </div>	
-</div>
-</div>
-	
-<table id="mytable">
-  <thead>
-    <tr>
-      <th>Subject</th>    
-      <th>Level</th>    
-      <th>Name</th>
-      <th>Marks 100%</th>
-      <th>Acc. Year</th>
-      <th>Term</th> 
-    </tr>
-  </thead>
-  <tbody>
-    <!-- Table rows will be dynamically added here -->
-  </tbody>
-</table>
-
-	
-
-<script>
-const form = document.getElementById("form");
-const table = document.getElementById("myTable");
-
-    form.addEventListener("Add", (event) => {
-    event.preventDefault(); // Prevent form from submitting (default behavior)
-
-    const Subject = document.getElementById("Subject").value;
-    const Level = document.getElementById("level").value;
-    const Name = document.getElementById("name").value;
-    const Marks = document.getElementById("Marks").value;
-    const Acc. Year = document.getElementById("Acc. Year").value;
-    const Term = document.getElementById("Term").value;
-
-	
-    const newRow = table.insertRow();
-    const SubjectCell = newRow.insertCell();
-    const LevelCell = newRow.insertCell();
-    const NameCell = newRow.insertCell();
-    const MarksCell = newRow.insertCell();
-    const Acc. YearCell = newRow.insertCell();
-    const TermCell = newRow.insertCell();	
-
-    SubjectCell.textContent = Subject;
-    LevelCell.textContent = Level;
-    NameCell.textContent = Name;
-    MarksCell.textContent = Marks;
-    Acc. YearCell.textContent = Acc. Year;
-    TermCell.textContent = Term;
-	
-});
-</script>
-
-
-
-
-
 	
 	<section>
 	<footer>
