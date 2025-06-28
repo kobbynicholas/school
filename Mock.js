@@ -14,11 +14,8 @@ form.addEventListener('submit', e => {
 
 
 function showDiv() {
-  document.getElementById('submit').style.display = "flex";
   document.getElementById('loadingGif').style.display = "flex";
   setTimeout(function() {
-    document.getElementById('loadingGif').style.display = "flex";
-    document.getElementById('showme').style.display = "flex";
+  document.getElementById('loadingGif').style.display = "flex";
   },5000);
-   
 }
