@@ -9,6 +9,7 @@ form.addEventListener('submit', e => {
   .then(response => alert("Thank you! marks submitted successfully." ))
   .then(() => { window.location.reload(); })
   .catch(error => console.error('Error!', error.message))
+  document.getElementById("myButton").style.display = "none";
 })
 
 
