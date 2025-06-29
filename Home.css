@@ -28,6 +28,27 @@ header{
     text-align: center;
 }
 
+
+.main1 {
+    background-color: ;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(1, 0, 0, 0.2);
+    padding: 10px 20px;
+    transition: transform 0.2s;
+    width: 500px;
+    text-align: center;
+}
+
+.main2 {
+    background-color: ;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(1, 0, 0, 0.2);
+    padding: 10px 20px;
+    transition: transform 0.2s;
+    width: 500px;
+    text-align: center;
+}
+
 h1 {
     color: #4CAF50;
 }
@@ -124,14 +145,6 @@ background-color:#fff;
 	color: #000;
 
 }
-
-
-
-
-
-
-
-	
 
 
 
