@@ -1,119 +1,351 @@
+```html id="e1v8xk"
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title>The Hilltop School</title>
-    <link rel="stylesheet" href="login.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Hilltop School - Marks Portal</title>
 
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
         body {
             background:
-                linear-gradient(rgba(0, 0, 0, 0.7),
-                rgba(0, 0, 0, 0.7)),
+                linear-gradient(rgba(0, 0, 0, 0.75),
+                rgba(0, 0, 0, 0.75)),
                 url('books.jpg');
 
-            background-repeat: no-repeat;
             background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             color: white;
+            min-height: 100vh;
+        }
+
+        /* HEADER */
+        .header {
             text-align: center;
+            padding: 20px;
+        }
+
+        .header img {
+            width: 100%;
+            max-width: 900px;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .header h1 {
+            margin-top: 15px;
+            font-size: 2rem;
+        }
+
+        .header h2 {
+            margin-top: 10px;
+            color: #f5c542;
+        }
+
+        /* ANNOUNCEMENT BAR */
+        .announcement {
+            width: 100%;
+            overflow: hidden;
+            background: #2A0442;
+            padding: 12px 0;
+            margin-top: 20px;
+            border-top: 2px solid #fff;
+            border-bottom: 2px solid #fff;
+        }
+
+        .announcement p {
+            display: inline-block;
+            white-space: nowrap;
+            animation: moveText 18s linear infinite;
+            font-size: 1rem;
+            font-weight: bold;
+        }
+
+        @keyframes moveText {
+            from {
+                transform: translateX(100%);
+            }
+
+            to {
+                transform: translateX(-100%);
+            }
+        }
+
+        /* LOGIN SECTION */
+        .login-container {
+            width: 90%;
+            max-width: 400px;
+            margin: 30px auto;
+            background: rgba(255, 255, 255, 0.08);
+            padding: 25px;
+            border-radius: 12px;
+            backdrop-filter: blur(8px);
+        }
+
+        .login-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .login-container input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 8px;
+        }
+
+        .login-container button {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            background: #f5c542;
+            color: black;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .login-container button:hover {
+            background: white;
+            transform: scale(1.03);
+        }
+
+        /* PORTAL CARDS */
+        .portal-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            width: 90%;
+            margin: 40px auto;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            backdrop-filter: blur(6px);
+            transition: 0.4s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+        }
+
+        .card h2 {
+            margin-bottom: 15px;
+            color: #f5c542;
+        }
+
+        .card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: 0.4s;
+        }
+
+        .card img:hover {
+            transform: scale(1.05);
+        }
+
+        /* RESULTS SECTION */
+        .results {
+            width: 90%;
+            margin: 30px auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .result-box {
+            background: #2A0442;
+            padding: 20px;
+            border-radius: 10px;
+            min-width: 250px;
+            text-align: center;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .result-box:hover {
+            background: #4d0b77;
+            transform: scale(1.05);
+        }
+
+        /* CONTACT SECTION */
+        .contact {
+            width: 90%;
+            margin: 40px auto;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.08);
+            padding: 25px;
+            border-radius: 15px;
+        }
+
+        .contact img {
+            margin: 10px;
+            transition: 0.3s;
+        }
+
+        .contact img:hover {
+            transform: scale(1.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        /* MOBILE RESPONSIVE */
+        @media (max-width: 768px) {
+
+            .header h1 {
+                font-size: 1.5rem;
+            }
+
+            .header h2 {
+                font-size: 1rem;
+            }
+
+            .announcement p {
+                font-size: 0.9rem;
+            }
+
+            .card img {
+                height: 150px;
+            }
         }
     </style>
 </head>
 
 <body>
 
-    <img src="top.png" width="900" height="200">
+    <!-- HEADER -->
+    <div class="header">
+        <img src="top.png" alt="School Banner">
 
-    <h2>THE OFFICE OF INTERNAL EXAMINATIONS</h2>
-    <h2>Marks Entry Portal</h2>
-
-    <marquee>
-        All marks must be entered by 2nd June 11:59pm.
-        The portal will be inactive after 2nd June 11:59pm.
-        If you have any problem contact Sir Nicholas. Thank you.
-    </marquee>
-
-    <marquee direction="right" behavior="alternate"
-        style="border:#2A0442 2px solid; color:white;">
-    </marquee>
-
-    <p></p>
-
-    <div class="main2">
-        <a href="Mockmarks.html">
-            <h1>MOCK EXAMS YEAR 9 & 11</h1>
-            <img src="pic.jpg" width="350" height="150">
-        </a>
+        <h1>THE OFFICE OF INTERNAL EXAMINATIONS</h1>
+        <h2>Marks Entry Portal</h2>
     </div>
 
-    <p></p>
-
-    <div class="main3">
-        <h1>MID-TERM EXAMS</h1>
-        <a href="mid-term.html">
-            <img src="picc.jpg" width="350" height="150">
-        </a>
+    <!-- ANNOUNCEMENT -->
+    <div class="announcement">
+        <p>
+            All marks must be entered by 2nd June 11:59pm.
+            The portal will be inactive after 2nd June 11:59pm.
+            If you experience any problem contact Sir Nicholas.
+            Thank you.
+        </p>
     </div>
 
-    <p></p>
+    <!-- LOGIN -->
+    <div class="login-container">
+        <h2>Teacher Login</h2>
 
-    <div class="main3">
-        <h1>END OF TERM EXAMS</h1>
-        <a href="exams.html">
-            <img src="pix.jpg" width="350" height="150">
-        </a>
+        <form>
+            <input type="text" placeholder="Username" required>
+            <input type="password" placeholder="Password" required>
+
+            <button type="submit">Login</button>
+        </form>
     </div>
 
-    <p></p>
+    <!-- PORTAL CARDS -->
+    <div class="portal-grid">
 
-    <div class="main3">
-        <h1>CLASS TEACHER REMARKS</h1>
-        <a href="remarks.html">
-            <img src="rem.png" width="200" height="150">
-        </a>
+        <div class="card">
+            <h2>MOCK EXAMS YEAR 9 & 11</h2>
+
+            <a href="Mockmarks.html">
+                <img src="pic.jpg" alt="Mock Exams">
+            </a>
+        </div>
+
+        <div class="card">
+            <h2>MID-TERM EXAMS</h2>
+
+            <a href="mid-term.html">
+                <img src="picc.jpg" alt="Midterm Exams">
+            </a>
+        </div>
+
+        <div class="card">
+            <h2>END OF TERM EXAMS</h2>
+
+            <a href="exams.html">
+                <img src="pix.jpg" alt="End of Term Exams">
+            </a>
+        </div>
+
+        <div class="card">
+            <h2>CLASS TEACHER REMARKS</h2>
+
+            <a href="remarks.html">
+                <img src="rem.png" alt="Teacher Remarks">
+            </a>
+        </div>
+
     </div>
 
-    <p></p>
+    <!-- RESULTS -->
+    <div class="results">
 
-    <div class="down2">
-        <h1>End of Term Results</h1>
+        <div class="result-box">
+            <h2>End of Term Results</h2>
+        </div>
+
+        <div class="result-box">
+            <h2>Mock Results</h2>
+        </div>
+
+        <div class="result-box">
+            <h2>Mid-Term Results</h2>
+        </div>
+
     </div>
 
-    <p></p>
+    <!-- CONTACT -->
+    <div class="contact">
 
-    <div class="down2">
-        <h1>Mock Results</h1>
-    </div>
+        <h2>For Any Difficulties Contact the Exams Coordinators</h2>
 
-    <p></p>
-
-    <div class="down2">
-        <h1>Mid-Term Results</h1>
-    </div>
-
-    <p></p>
-
-    <div class="down1">
-        <p>For any difficulties contact the Exams Coordinators below</p>
+        <br>
 
         CONTACT 1
+
         <a href="https://api.whatsapp.com/send?phone=233540587025">
             <img src="whatsapp.png" width="120" height="50">
         </a>
 
         CONTACT 2
+
         <a href="https://api.whatsapp.com/send?phone=233599363266">
             <img src="whatsapp.png" width="120" height="50">
         </a>
+
     </div>
+
+    <footer>
+        <p>© 2026 The Hilltop School | Internal Examinations Portal</p>
+    </footer>
 
 </body>
 
-<footer>
-</footer>
-
 </html>
-
-
-
-
+```
