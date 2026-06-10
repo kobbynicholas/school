@@ -152,9 +152,32 @@
     }
 
     function finalSubmit() {
-        if (students.length === 0) {
-            alert("No data to submit!");
-            return;
+    if (students.length === 0) {
+        alert("No data to submit!");
+        return;
+    }
+
+    fetch("YOUR_GOOGLE_SCRIPT_URL_HERE", {
+        method: "POST",
+        body: JSON.stringify(students),
+        headers: {
+            "Content-Type": "application/json"
+        }
+    })
+    .then(response => response.text())
+    .then(data => {
+        alert("Saved to Google Sheets successfully!");
+        console.log(data);
+
+        // clear after saving
+        students = [];
+        renderTable();
+    })
+    .catch(error => {
+        alert("Error saving data!");
+        console.error(error);
+    });
+}
         }
 
         console.log("FINAL CLASS MARKS:", students);
