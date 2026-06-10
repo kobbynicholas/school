@@ -163,7 +163,7 @@
         headers: {
             "Content-Type": "application/json"
         }
-    })
+    }
     .then(response => response.text())
     .then(data => {
         alert("Saved to Google Sheets successfully!");
@@ -172,11 +172,11 @@
         // clear after saving
         students = [];
         renderTable();
-    })
+    }
     .catch(error => {
         alert("Error saving data!");
         console.error(error);
-    });
+    
 }
 
         console.log("FINAL CLASS MARKS:", students);
