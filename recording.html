@@ -73,7 +73,7 @@
     <h2>Class Marks Entry System (Draft Preview)</h2>
 
     <input type="text" id="studentName" placeholder="Student Name">
-    <input type="number" id="studentMark" placeholder="Mark (100%)">
+    <input type="number" id="studentMark" placeholder="Maths Mark">
 
     <button class="add-btn" onclick="addStudent()">Add Student</button>
 
@@ -152,12 +152,10 @@
     }
 
     function finalSubmit() {
-    if (students.length === 0) {
-        alert("No data to submit!");
-        return;
-    }
-
-    
+        if (students.length === 0) {
+            alert("No data to submit!");
+            return;
+        }
 
         console.log("FINAL CLASS MARKS:", students);
         alert("Marks submitted successfully! Check console for data.");
