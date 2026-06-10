@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Class Marks Entry System</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #f4f6f9;
+        margin: 0;
+        padding: 20px;
+    }
+
+    h2 {
+        text-align: center;
+    }
+
+    .container {
+        max-width: 900px;
+        margin: auto;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    input {
+        padding: 10px;
+        margin: 5px;
+        width: 200px;
+    }
+
+    button {
+        padding: 10px 15px;
+        margin: 5px;
+        cursor: pointer;
+        border: none;
+        border-radius: 5px;
+    }
+
+    .add-btn { background: #28a745; color: white; }
+    .submit-btn { background: #007bff; color: white; }
+    .edit-btn { background: orange; color: white; }
+    .delete-btn { background: red; color: white; }
+
+    table {
+        width: 100%;
+        margin-top: 20px;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        border: 1px solid #ddd;
+        padding: 10px;
+        text-align: center;
+    }
+
+    th {
+        background: #007bff;
+        color: white;
+    }
+
+    .preview-box {
+        margin-top: 20px;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>Class Marks Entry System (Draft Preview)</h2>
+
+    <input type="text" id="studentName" placeholder="Student Name">
+    <input type="number" id="studentMark" placeholder="Mark">
+
+    <button class="add-btn" onclick="addStudent()">Add Student</button>
+
+    <div class="preview-box">
+        <h3>Preview Table</h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Student Name</th>
+                    <th>Mark</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody"></tbody>
+        </table>
+
+        <button class="submit-btn" onclick="finalSubmit()">Final Submit</button>
+    </div>
+</div>
+
+<script>
+    let students = [];
+
+    function addStudent() {
+        let name = document.getElementById("studentName").value;
+        let mark = document.getElementById("studentMark").value;
+
+        if (name === "" || mark === "") {
+            alert("Please enter both name and mark");
+            return;
+        }
+
+        students.push({ name, mark });
+
+        document.getElementById("studentName").value = "";
+        document.getElementById("studentMark").value = "";
+
+        renderTable();
+    }
+
+    function renderTable() {
+        let table = document.getElementById("tableBody");
+        table.innerHTML = "";
+
+        students.forEach((student, index) => {
+            table.innerHTML += `
+                <tr>
+                    <td>${index + 1}</td>
+                    <td>${student.name}</td>
+                    <td>${student.mark}</td>
+                    <td>
+                        <button class="edit-btn" onclick="editStudent(${index})">Edit</button>
+                        <button class="delete-btn" onclick="deleteStudent(${index})">Delete</button>
+                    </td>
+                </tr>
+            `;
+        });
+    }
+
+    function editStudent(index) {
+        let newName = prompt("Edit Name:", students[index].name);
+        let newMark = prompt("Edit Mark:", students[index].mark);
+
+        if (newName !== null && newMark !== null) {
+            students[index].name = newName;
+            students[index].mark = newMark;
+            renderTable();
+        }
+    }
+
+    function deleteStudent(index) {
+        students.splice(index, 1);
+        renderTable();
+    }
+
+    function finalSubmit() {
+        if (students.length === 0) {
+            alert("No data to submit!");
+            return;
+        }
+
+        console.log("FINAL CLASS MARKS:", students);
+        alert("Marks submitted successfully! Check console for data.");
+    }
+</script>
+
+</body>
+</html>
