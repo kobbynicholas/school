@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#261044">
+  <title>Mock Marks Entry | Hilltop International British School</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --purple-950: #190b2b;
+      --purple-900: #261044;
+      --purple-800: #35165b;
+      --purple-700: #4c2377;
+      --purple-600: #613192;
+      --gold: #efc45a;
+      --gold-soft: #fff3ce;
+      --ink: #21182c;
+      --muted: #746b7e;
+      --surface: #ffffff;
+      --line: #e8e1ef;
+      --page: #f5f2f8;
+      --success: #16835d;
+      --shadow: 0 24px 70px rgba(29, 10, 49, .18);
+    }
+    * { box-sizing: border-box; }
+    html { min-height: 100%; scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 12% 10%, rgba(239,196,90,.14), transparent 28rem),
+        linear-gradient(135deg, rgba(25,11,43,.94), rgba(48,20,77,.88)),
+        url('books.jpg') center / cover fixed;
+      padding: 24px;
+    }
+    a { color: inherit; }
+    .page-shell { width: min(1160px, 100%); margin: 0 auto; }
+    .topbar {
+      display: flex; align-items: center; justify-content: space-between; gap: 18px;
+      margin-bottom: 30px; color: #fff;
+    }
+    .school-brand { display: flex; align-items: center; gap: 16px; min-width: 0; }
+    .brand-image-wrap {
+      width: 94px; height: 70px; flex: 0 0 auto; display: grid; place-items: center;
+      padding: 5px; border: 1px solid rgba(255,255,255,.22); border-radius: 15px;
+      background: rgba(255,255,255,.96); box-shadow: 0 10px 28px rgba(0,0,0,.16);
+    }
+    .brand-image { width: 100%; height: 100%; object-fit: contain; border-radius: 9px; }
+    .brand-kicker { margin: 0 0 4px; font-size: .72rem; letter-spacing: .16em; font-weight: 800; color: var(--gold); text-transform: uppercase; }
+    .brand-name { margin: 0; font-size: clamp(.98rem, 2vw, 1.18rem); font-weight: 750; letter-spacing: -.02em; line-height: 1.25; }
+    .brand-subtitle { margin: 5px 0 0; font-size: .85rem; color: rgba(255,255,255,.69); }
+    .home-link {
+      display: inline-flex; align-items: center; justify-content: center; gap: 9px;
+      min-height: 44px; padding: 0 16px; border-radius: 12px; text-decoration: none;
+      color: #fff; border: 1px solid rgba(255,255,255,.24); background: rgba(255,255,255,.08);
+      font-size: .9rem; font-weight: 700; white-space: nowrap; transition: .2s ease;
+    }
+    .home-link:hover { background: rgba(255,255,255,.16); transform: translateY(-1px); }
+    .home-link:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+    .layout { display: grid; grid-template-columns: minmax(0, .88fr) minmax(0, 1.12fr); gap: 26px; align-items: stretch; }
+    .intro-panel {
+      position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between;
+      min-height: 100%; padding: clamp(26px, 4vw, 42px); border-radius: 24px;
+      color: #fff; background: linear-gradient(150deg, rgba(82,42,126,.93), rgba(34,13,57,.97));
+      border: 1px solid rgba(255,255,255,.14); box-shadow: var(--shadow);
+    }
+    .intro-panel::after {
+      content: ""; position: absolute; width: 290px; height: 290px; border-radius: 50%;
+      right: -120px; bottom: -135px; border: 1px solid rgba(239,196,90,.28);
+      box-shadow: 0 0 0 26px rgba(239,196,90,.035), 0 0 0 54px rgba(239,196,90,.025);
+      pointer-events: none;
+    }
+    .eyebrow { display: inline-flex; align-items: center; gap: 8px; width: fit-content; padding: 8px 11px; border-radius: 999px; background: rgba(239,196,90,.13); color: #ffe4a0; font-size: .75rem; text-transform: uppercase; letter-spacing: .1em; font-weight: 800; }
+    .eyebrow-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 0 4px rgba(239,196,90,.15); }
+    .intro-panel h1 { margin: 24px 0 15px; max-width: 460px; font-size: clamp(2rem, 4.2vw, 3.25rem); letter-spacing: -.055em; line-height: 1.05; }
+    .intro-panel h1 span { color: var(--gold); }
+    .intro-copy { max-width: 420px; margin: 0; color: rgba(255,255,255,.77); line-height: 1.75; font-size: .98rem; }
+    .help-list { display: grid; gap: 14px; margin: 33px 0 0; padding: 0; list-style: none; }
+    .help-list li { display: flex; align-items: flex-start; gap: 12px; color: rgba(255,255,255,.88); font-size: .9rem; line-height: 1.5; }
+    .check-icon { display: grid; place-items: center; width: 23px; height: 23px; flex: 0 0 auto; border-radius: 8px; background: rgba(239,196,90,.16); color: var(--gold); font-weight: 900; }
+    .privacy-note { position: relative; z-index: 1; margin: 36px 0 0; padding-top: 19px; border-top: 1px solid rgba(255,255,255,.14); color: rgba(255,255,255,.62); font-size: .78rem; line-height: 1.6; }
+    .form-panel { padding: clamp(23px, 3.3vw, 38px); border-radius: 24px; background: var(--surface); box-shadow: var(--shadow); }
+    .form-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 15px; margin-bottom: 25px; }
+    .form-heading h2 { margin: 0 0 7px; font-size: clamp(1.4rem, 2.5vw, 1.8rem); letter-spacing: -.04em; color: var(--purple-950); }
+    .form-heading p { margin: 0; max-width: 390px; color: var(--muted); font-size: .9rem; line-height: 1.55; }
+    .marks-chip { padding: 8px 10px; background: var(--gold-soft); border: 1px solid #f5e4b0; border-radius: 10px; color: #765311; white-space: nowrap; font-size: .76rem; font-weight: 800; }
+    .form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 16px; }
+    .field { min-width: 0; }
+    .field.full { grid-column: 1 / -1; }
+    label { display: block; margin-bottom: 8px; font-size: .82rem; font-weight: 750; color: #3a2c48; }
+    .required { color: #b14b45; }
+    input {
+      display: block; width: 100%; min-height: 48px; padding: 12px 14px; border: 1px solid #ddd4e7;
+      border-radius: 12px; color: #251832; background: #fcfbfe; font: inherit; font-size: .92rem;
+      transition: border-color .18s ease, box-shadow .18s ease, background .18s ease;
+    }
+    input::placeholder { color: #9c92a6; }
+    input:hover { border-color: #bda9d3; }
+    input:focus { outline: none; border-color: var(--purple-600); background: #fff; box-shadow: 0 0 0 4px rgba(97,49,146,.1); }
+    input[type="number"] { appearance: textfield; }
+    input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button { opacity: 1; }
+    .field-help { margin: 7px 0 0; color: var(--muted); font-size: .75rem; line-height: 1.45; }
+    .form-divider { height: 1px; background: var(--line); margin: 24px 0 20px; }
+    .submit-row { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+    .submit-button {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px; flex: 1 1 220px;
+      min-height: 52px; padding: 12px 18px; border: 0; border-radius: 13px; cursor: pointer;
+      background: linear-gradient(135deg, var(--purple-700), var(--purple-900)); color: #fff;
+      font: inherit; font-size: .94rem; font-weight: 800; box-shadow: 0 10px 22px rgba(53,22,91,.2); transition: transform .18s ease, box-shadow .18s ease;
+    }
+    .submit-button:hover { transform: translateY(-2px); box-shadow: 0 14px 27px rgba(53,22,91,.27); }
+    .submit-button:disabled { cursor: wait; opacity: .72; transform: none; }
+    .button-arrow { font-size: 1.15rem; line-height: 1; }
+    .form-status { display: none; width: 100%; align-items: center; gap: 10px; color: var(--purple-800); font-size: .86rem; font-weight: 700; }
+    .form-status.visible { display: flex; }
+    .spinner { width: 18px; height: 18px; border: 2px solid #dfd2eb; border-top-color: var(--purple-700); border-radius: 50%; animation: spin .75s linear infinite; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    #loadingGif { display: none; }
+    #loadingGif img { display: block; width: 42px; height: 42px; object-fit: contain; }
+    .footer { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin: 25px 2px 0; color: rgba(255,255,255,.65); font-size: .79rem; }
+    .footer strong { color: rgba(255,255,255,.9); letter-spacing: .06em; }
+    .footer span { text-align: right; }
+    .preview-section { margin-top: 30px; padding-top: 27px; border-top: 1px solid var(--line); }
+    .preview-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 15px; margin-bottom: 18px; }
+    .preview-heading h2 { margin: 0 0 7px; font-size: clamp(1.2rem, 2.3vw, 1.55rem); letter-spacing: -.035em; color: var(--purple-950); }
+    .preview-heading p { margin: 0; max-width: 560px; color: var(--muted); font-size: .88rem; line-height: 1.55; }
+    .batch-helper { margin-top: 12px; }
+    .empty-preview { display: grid; justify-items: center; gap: 8px; text-align: center; padding: 30px 18px; border: 1px dashed #d8cbe5; border-radius: 15px; background: #fcfaff; color: var(--muted); font-size: .84rem; line-height: 1.5; }
+    .empty-preview strong { color: var(--purple-900); font-size: .95rem; }
+    .empty-icon { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 14px; background: var(--gold-soft); color: var(--purple-800); font-size: 1.6rem; }
+    .preview-table-wrap { width: 100%; overflow: auto; border: 1px solid var(--line); border-radius: 14px; }
+    .preview-table { width: 100%; border-collapse: collapse; min-width: 940px; font-size: .82rem; }
+    .preview-table th { padding: 12px 13px; text-align: left; background: #f7f3fb; color: #5f4c70; font-size: .72rem; font-weight: 800; white-space: nowrap; border-bottom: 1px solid var(--line); }
+    .preview-table td { padding: 12px 13px; vertical-align: top; border-bottom: 1px solid #eee8f3; color: #352642; }
+    .preview-table tbody tr:last-child td { border-bottom: 0; }
+    .preview-table tbody tr:nth-child(even) { background: #fdfbff; }
+    .preview-table tbody tr.is-editing { background: #fff8df; }
+    .mark-cell { font-weight: 850; color: var(--purple-800) !important; white-space: nowrap; }
+    .student-cell { min-width: 180px; font-weight: 700; }
+    .row-actions { display: flex; align-items: center; gap: 7px; white-space: nowrap; }
+    .row-action { min-height: 34px; padding: 6px 10px; border: 1px solid #ded3e8; border-radius: 8px; background: #fff; color: var(--purple-800); font: inherit; font-size: .76rem; font-weight: 800; cursor: pointer; }
+    .row-action:hover { background: #f3ecfa; }
+    .row-action.remove { color: #a13b43; border-color: #eed1d2; }
+    .row-action.remove:hover { background: #fff0f0; }
+    .form-status { display: none; width: 100%; align-items: center; gap: 8px; color: var(--success); font-size: .84rem; font-weight: 750; }
+    .form-status.visible { display: flex; }
+    .batch-status { margin-top: 14px; padding: 12px 14px; border-radius: 11px; background: #f1f8f4; color: #176246; font-size: .84rem; line-height: 1.55; }
+    .batch-status.warning { background: #fff6e2; color: #78520e; }
+    .batch-status.error { background: #fff0f0; color: #9b333b; }
+    .preview-actions { display: flex; justify-content: flex-end; align-items: stretch; gap: 11px; margin-top: 17px; }
+    .secondary-button { min-height: 50px; padding: 12px 17px; border: 1px solid #d8cce3; border-radius: 12px; background: #fff; color: var(--purple-800); font: inherit; font-size: .88rem; font-weight: 800; cursor: pointer; }
+    .secondary-button:hover:not(:disabled) { background: #f8f3fc; }
+    .secondary-button:disabled, .submit-button:disabled { cursor: not-allowed; opacity: .48; transform: none; box-shadow: none; }
+    .batch-submit { flex: 0 1 270px; }
+    .submission-note { margin: 14px 0 0; padding: 12px 14px; border-left: 3px solid var(--gold); border-radius: 0 9px 9px 0; background: #fffaf0; color: #6e5c34; font-size: .77rem; line-height: 1.6; }
+
+    @media (max-width: 860px) {
+      body { padding: 18px; }
+      .layout { grid-template-columns: 1fr; }
+      .intro-panel { min-height: auto; }
+      .privacy-note { margin-top: 25px; }
+    }
+    @media (max-width: 560px) {
+      body { padding: 12px; }
+      .topbar { align-items: flex-start; gap: 10px; margin-bottom: 16px; }
+      .school-brand { gap: 10px; }
+      .brand-image-wrap { width: 62px; height: 54px; border-radius: 11px; }
+      .brand-kicker { font-size: .62rem; letter-spacing: .11em; }
+      .brand-name { font-size: .9rem; }
+      .brand-subtitle { font-size: .74rem; }
+      .home-link { width: 42px; min-width: 42px; padding: 0; font-size: 0; gap: 0; border-radius: 11px; }
+      .home-link svg { width: 19px; height: 19px; }
+      .intro-panel, .form-panel { padding: 22px 18px; border-radius: 19px; }
+      .intro-panel h1 { margin-top: 19px; font-size: 2.25rem; }
+      .intro-copy { font-size: .9rem; }
+      .form-heading { flex-direction: column; margin-bottom: 20px; }
+      .form-grid { grid-template-columns: 1fr; gap: 15px; }
+      .field.full { grid-column: auto; }
+      .submit-row { align-items: stretch; }
+      .submit-button { flex-basis: 100%; }
+      .preview-heading { flex-direction: column; }
+      .preview-actions { flex-direction: column-reverse; }
+      .batch-submit { flex-basis: auto; width: 100%; }
+      .secondary-button { width: 100%; }
+      .footer { flex-direction: column; align-items: flex-start; line-height: 1.5; }
+      .footer span { text-align: left; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page-shell">
+    <header class="topbar">
+      <div class="school-brand">
+        <div class="brand-image-wrap">
+          <img class="brand-image" src="pic.jpg" alt="Hilltop school banner">
+        </div>
+        <div>
+          <p class="brand-kicker">Hilltop International British School</p>
+          <p class="brand-name">Office of Internal Examinations</p>
+          <p class="brand-subtitle">Teacher marks submission portal</p>
+        </div>
+      </div>
+      <a class="home-link" href="index.html" aria-label="Return to home page">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1V10Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Home
+      </a>
+    </header>
+
+    <section class="layout" aria-label="Mock examination marks portal">
+      <aside class="intro-panel">
+        <div>
+          <div class="eyebrow"><span class="eyebrow-dot"></span> Mock examination portal</div>
+          <h1>Every mark.<br><span>Accurately recorded.</span></h1>
+          <p class="intro-copy">Prepare a batch of mock examination marks. Add each student to the preview, review every row, then send the whole batch to the existing marks sheet.</p>
+          <ul class="help-list">
+            <li><span class="check-icon" aria-hidden="true">✓</span><span>Enter one student's details and add the row to the preview.</span></li>
+            <li><span class="check-icon" aria-hidden="true">✓</span><span>Edit or remove any incorrect row before sending.</span></li>
+            <li><span class="check-icon" aria-hidden="true">✓</span><span>Review the full batch, then submit all rows together.</span></li>
+          </ul>
+        </div>
+        <p class="privacy-note">Please double-check each entry before submission. If you notice an issue with the portal, contact the examinations coordinators.</p>
+      </aside>
+
+      <section class="form-panel">
+        <div class="form-heading">
+          <div>
+            <h2>Mock marks entry</h2>
+            <p>Complete all required fields below to record a mark.</p>
+          </div>
+          <span class="marks-chip">Score: / 100</span>
+        </div>
+
+        <form method="post" action="https://script.google.com/macros/s/AKfycbyitxa8TRVTTAYSwSrP5stfqsPpLxNFqDooJyMu1coYJJJb0HUTQJE7eHLLcIkJmPyD/exec" name="contact-form" id="mockMarksForm" autocomplete="on" onsubmit="return false;">
+          <div class="form-grid">
+            <div class="field">
+              <label for="subjectInput">Subject <span class="required">*</span></label>
+              <input id="subjectInput" list="Subject" name="Subject" placeholder="Choose a subject" required>
+              <datalist id="Subject">
+    <option value="ACCOUNTING">
+    <option value="ADD MATHS">
+    <option value="BIOLOGY">
+    <option value="BUSINESS">
+    <option value="CHEMISTRY">
+    <option value="COMPUTING">
+    <option value="ECONOMICS">
+    <option value="ENGLISH">
+    <option value="EXTENDED MATHS">
+    <option value="FRENCH"> 
+    <option value="GEOGRAPHY">
+    <option value="MECHANICS">
+    <option value="PHYSICS">
+    <option value="PURE MATHS">
+    <option value="SCIENCE">
+    <option value="STATISTICS">   
+  </datalist>
+            </div>
+            <div class="field">
+              <label for="yearInput">Year of student <span class="required">*</span></label>
+              <input id="yearInput" list="level" name="Year" placeholder="Choose year group" required>
+              <datalist id="level">
+    <option value="9">
+    <option value="11">
+    <option value="12">
+    <option value="13">        
+  </datalist>
+            </div>
+            <div class="field full">
+              <label for="studentInput">Student name <span class="required">*</span></label>
+              <input id="studentInput" list="browsers" name="name" placeholder="Start typing or choose a student" required>
+              <datalist id="browsers">
+
+<option value="ABDUL - FATAWU  KADIR  SAMAKUSE">
+<option value="ADUSEI - POKU  KWAKU ADUTWUM">
+<option value="AHMAD  MERHI">
+<option value="ANTWI  JOHN KOFI  OSEI - TWUM">
+<option value="APPIAH  NANNETTE ACHIAA">
+<option value="ARCHER  AARON">
+<option value="ARTHUR  SETH KWAKU BOTCHWEY">
+<option value="ASANTE  VANESSA">
+<option value="AYINSOGYA  EMMANUELLA AYAMGA">
+<option value="BAAH  ERNESTINA  FRIMPOMAH">
+<option value="GUIRO  ABDOUL FATAO">
+<option value="JADHAV  YASH  AMBARUSHI">
+<option value="KODUAH  ARIELLA ASEDA">
+<option value="LAMINU  ZALIKA MOHAMMED">
+<option value="NII ARMAH  JASON  LARYEA YEHOWARDROMO">
+<option value="OWUSU - KARIKARI  HANNAROSE YAA">
+<option value="SAM - ARTHUR  MIGUEL">
+<option value="TAMATEY  BENEDICT TERKPER">
+
+
+	
+<option value="ADARKWAH  ELSA BOADI">
+<option value="AFARI  IDUN  BRIANA">
+<option value="AGYEI - NOMAFO  NINA NANA AKUA ODURAA">
+<option value="AGYENIM - BOATENG  GODWIN PRINCE">
+<option value="AMOAKO  FAITH">
+<option value="AMOFA  KOFI">
+<option value="ANTWI  ADOLLAH JAEL">
+<option value="ASAMOAH  AKOSUA NTRIWAA">
+<option value="ASAMOAH  EMMANUEL">
+<option value="BATCHILLY  HAGI">
+<option value="BROBBEY  NHYIRA YAW  OWUSU">
+<option value="DZANKU  DAVID ANNAS">
+<option value="MARQUIS - GALLIMORE  KHIMEISAAUSURA">
+<option value="MENSAH  IRENE">
+<option value="MENSAH NYADE  NANA ADU BARIMAH">
+<option value="NII ARMAH  PETER CORNELIUS  YEHOWAJORMOR">
+<option value="ORLEANS - THOMPSON  NANA AMA NHYIRA">
+<option value="OWUSU  GARRIET  GYAMFI">
+<option value="OWUSU - KARIKARI  GRACELYN ABENA">
+<option value="SARPONG  KWABENA TWUM KUMANKUMA">
+<option value="TAWFIK  BABA ZAKARI">
+<option value="YAMSON  ZOE">
+<option value="YENTORGIT  SOUNG ABIDAH">
+<option value="ZONGO BARKWEND JEREMY">
+
+<option value="">	
+<option value="">
+<option value="">
+<option value="">	
+    
+  </datalist>
+              <p class="field-help">Use the spelling shown in the student list to help keep records consistent.</p>
+            </div>
+            <div class="field">
+              <label for="marksInput">Mock mark <span class="required">*</span></label>
+              <input id="marksInput" type="number" name="Marks" placeholder="Enter mark (0–100)" min="0" max="100" step="any" inputmode="decimal" required>
+              <p class="field-help">Enter a score from 0 to 100.</p>
+            </div>
+            <div class="field">
+              <label for="academicYearInput">Academic year <span class="required">*</span></label>
+              <input id="academicYearInput" type="text" name="Acc. Year" value="2025/2026" autocomplete="off" required>
+            </div>
+            <div class="field">
+              <label for="termInput">Term <span class="required">*</span></label>
+              <input id="termInput" type="text" name="Term" value="Term 2" required>
+            </div>
+            <div class="field">
+              <label for="seriesInput">Mock series <span class="required">*</span></label>
+              <input id="seriesInput" type="text" name="Mock Series" value="Mock 3" required>
+            </div>
+          </div>
+          <div class="form-divider"></div>
+          <div class="submit-row">
+            <button id="myButton" class="submit-button" type="button">
+              Add entry to preview <span class="button-arrow" aria-hidden="true">＋</span>
+            </button>
+            <div id="formStatus" class="form-status" role="status" aria-live="polite"></div>
+          </div>
+          <p class="field-help batch-helper">This only adds the record to the list below. Nothing is sent to Google Sheets until you choose <strong>Submit all entries</strong>.</p>
+        </form>
+
+        <section class="preview-section" aria-labelledby="previewHeading">
+          <div class="preview-heading">
+            <div>
+              <h2 id="previewHeading">Review before submitting</h2>
+              <p>Check all student marks together. You can edit or remove a row before sending the batch.</p>
+            </div>
+            <span id="previewCount" class="marks-chip" aria-live="polite">0 entries</span>
+          </div>
+          <div id="emptyPreview" class="empty-preview">
+            <span class="empty-icon" aria-hidden="true">▤</span>
+            <strong>No entries added yet</strong>
+            <span>Complete the form above and select “Add entry to preview”.</span>
+          </div>
+          <div id="previewTableWrap" class="preview-table-wrap" hidden>
+            <table class="preview-table">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Subject</th>
+                  <th scope="col">Year</th>
+                  <th scope="col">Student</th>
+                  <th scope="col">Mark</th>
+                  <th scope="col">Academic year</th>
+                  <th scope="col">Term</th>
+                  <th scope="col">Series</th>
+                  <th scope="col">Actions</th>
+                </tr>
+              </thead>
+              <tbody id="previewBody"></tbody>
+            </table>
+          </div>
+          <div class="batch-status" id="batchStatus" role="status" aria-live="polite" hidden></div>
+          <div class="preview-actions">
+            <button id="clearPreviewButton" class="secondary-button" type="button" disabled>Clear preview</button>
+            <button id="submitBatchButton" class="submit-button batch-submit" type="button" disabled>Submit all entries <span class="button-arrow" aria-hidden="true">→</span></button>
+          </div>
+          <p class="submission-note"><strong>Important:</strong> GitHub Pages cannot read the confirmation response from this Google Apps Script endpoint. After sending, check the destination Google Sheet before clearing the preview or attempting another submission.</p>
+        </section>
+      </section>
+    </section>
+
+    <footer class="footer">
+      <strong>HILLTOP INT. BRITISH SCHOOL</strong>
+      <span>Internal Examinations · Mock Marks Portal</span>
+    </footer>
+  </main>
+
+  <script>
+    // GitHub Pages has no PHP/backend. This browser-side queue sends each row
+    // to the existing Google Apps Script endpoint as a separate form-urlencoded POST.
+    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyitxa8TRVTTAYSwSrP5stfqsPpLxNFqDooJyMu1coYJJJb0HUTQJE7eHLLcIkJmPyD/exec';
+    const form = document.getElementById('mockMarksForm');
+    const addButton = document.getElementById('myButton');
+    const formStatus = document.getElementById('formStatus');
+    const previewCount = document.getElementById('previewCount');
+    const emptyPreview = document.getElementById('emptyPreview');
+    const previewTableWrap = document.getElementById('previewTableWrap');
+    const previewBody = document.getElementById('previewBody');
+    const clearPreviewButton = document.getElementById('clearPreviewButton');
+    const submitBatchButton = document.getElementById('submitBatchButton');
+    const batchStatus = document.getElementById('batchStatus');
+
+    let entries = [];
+    let nextId = 1;
+    let editingId = null;
+    let batchLocked = false;
+
+    function readFormEntry() {
+      const values = new FormData(form);
+      return {
+        id: editingId === null ? nextId++ : editingId,
+        Subject: String(values.get('Subject') || '').trim(),
+        Year: String(values.get('Year') || '').trim(),
+        name: String(values.get('name') || '').trim(),
+        Marks: String(values.get('Marks') || '').trim(),
+        'Acc. Year': String(values.get('Acc. Year') || '').trim(),
+        Term: String(values.get('Term') || '').trim(),
+        'Mock Series': String(values.get('Mock Series') || '').trim()
+      };
+    }
+
+    function setFormStatus(message) {
+      formStatus.textContent = message;
+      formStatus.classList.toggle('visible', Boolean(message));
+    }
+
+    function showBatchStatus(message, type = '') {
+      batchStatus.textContent = message;
+      batchStatus.className = 'batch-status' + (type ? ' ' + type : '');
+      batchStatus.hidden = !message;
+    }
+
+    function addCell(row, value, className = '') {
+      const cell = document.createElement('td');
+      if (className) cell.className = className;
+      cell.textContent = value;
+      row.appendChild(cell);
+      return cell;
+    }
+
+    function renderPreview() {
+      previewBody.replaceChildren();
+      entries.forEach((entry, index) => {
+        const row = document.createElement('tr');
+        if (entry.id === editingId) row.classList.add('is-editing');
+        addCell(row, String(index + 1));
+        addCell(row, entry.Subject);
+        addCell(row, entry.Year);
+        addCell(row, entry.name, 'student-cell');
+        addCell(row, entry.Marks + ' / 100', 'mark-cell');
+        addCell(row, entry['Acc. Year']);
+        addCell(row, entry.Term);
+        addCell(row, entry['Mock Series']);
+
+        const actionsCell = document.createElement('td');
+        const actions = document.createElement('div');
+        actions.className = 'row-actions';
+        const edit = document.createElement('button');
+        edit.type = 'button';
+        edit.className = 'row-action';
+        edit.dataset.action = 'edit';
+        edit.dataset.id = String(entry.id);
+        edit.textContent = entry.id === editingId ? 'Editing' : 'Edit';
+        edit.disabled = batchLocked;
+        edit.setAttribute('aria-label', 'Edit ' + entry.name);
+        const remove = document.createElement('button');
+        remove.type = 'button';
+        remove.className = 'row-action remove';
+        remove.dataset.action = 'remove';
+        remove.dataset.id = String(entry.id);
+        remove.textContent = 'Remove';
+        remove.disabled = batchLocked;
+        remove.setAttribute('aria-label', 'Remove ' + entry.name);
+        actions.append(edit, remove);
+        actionsCell.appendChild(actions);
+        row.appendChild(actionsCell);
+        previewBody.appendChild(row);
+      });
+
+      const count = entries.length;
+      previewCount.textContent = count + (count === 1 ? ' entry' : ' entries');
+      emptyPreview.hidden = count > 0;
+      previewTableWrap.hidden = count === 0;
+      clearPreviewButton.disabled = count === 0;
+      submitBatchButton.disabled = count === 0 || batchLocked;
+      addButton.disabled = batchLocked;
+      form.querySelectorAll('input').forEach(input => { input.disabled = batchLocked; });
+      if (batchLocked) {
+        addButton.textContent = 'Batch sent — verify sheet';
+      } else {
+        addButton.innerHTML = editingId === null
+          ? 'Add entry to preview <span class="button-arrow" aria-hidden="true">＋</span>'
+          : 'Update preview entry <span class="button-arrow" aria-hidden="true">✓</span>';
+      }
+    }
+
+    function resetEntryForm() {
+      editingId = null;
+      form.reset();
+      setFormStatus('');
+      renderPreview();
+    }
+
+    addButton.addEventListener('click', function () {
+      if (batchLocked) return;
+      if (!form.reportValidity()) return;
+      const entry = readFormEntry();
+      const numericMark = Number(entry.Marks);
+      if (!Number.isFinite(numericMark) || numericMark < 0 || numericMark > 100) {
+        document.getElementById('marksInput').setCustomValidity('Enter a mark between 0 and 100.');
+        document.getElementById('marksInput').reportValidity();
+        return;
+      }
+      document.getElementById('marksInput').setCustomValidity('');
+      if (editingId === null) {
+        entries.push(entry);
+        setFormStatus('Entry added to the preview. You can now enter another student.');
+      } else {
+        const index = entries.findIndex(item => item.id === editingId);
+        if (index >= 0) entries[index] = entry;
+        setFormStatus('Preview entry updated.');
+      }
+      editingId = null;
+      form.reset();
+      renderPreview();
+    });
+
+    form.addEventListener('submit', event => event.preventDefault());
+
+    previewBody.addEventListener('click', function (event) {
+      const button = event.target.closest('button[data-action]');
+      if (!button || batchLocked) return;
+      const id = Number(button.dataset.id);
+      const entry = entries.find(item => item.id === id);
+      if (!entry) return;
+
+      if (button.dataset.action === 'edit') {
+        editingId = id;
+        form.elements.namedItem('Subject').value = entry.Subject;
+        form.elements.namedItem('Year').value = entry.Year;
+        form.elements.namedItem('name').value = entry.name;
+        form.elements.namedItem('Marks').value = entry.Marks;
+        form.elements.namedItem('Acc. Year').value = entry['Acc. Year'];
+        form.elements.namedItem('Term').value = entry.Term;
+        form.elements.namedItem('Mock Series').value = entry['Mock Series'];
+        setFormStatus('Editing ' + entry.name + '. Select “Update preview entry” to save your changes.');
+        renderPreview();
+        form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        document.getElementById('subjectInput').focus({ preventScroll: true });
+      } else if (button.dataset.action === 'remove') {
+        entries = entries.filter(item => item.id !== id);
+        if (editingId === id) resetEntryForm();
+        else renderPreview();
+        showBatchStatus('Entry removed from the preview. It has not been submitted.', 'warning');
+      }
+    });
+
+    clearPreviewButton.addEventListener('click', function () {
+      if (!entries.length) return;
+      const message = batchLocked
+        ? 'Clear the batch from this screen? Do this only after checking the destination Google Sheet.'
+        : 'Clear all ' + entries.length + ' preview entries? They have not been submitted yet.';
+      if (!window.confirm(message)) return;
+      entries = [];
+      editingId = null;
+      batchLocked = false;
+      form.reset();
+      setFormStatus('');
+      showBatchStatus('Preview cleared. You can start a new batch.');
+      renderPreview();
+    });
+
+    submitBatchButton.addEventListener('click', async function () {
+      if (!entries.length || batchLocked) return;
+      const confirmMessage = 'Send ' + entries.length + ' mock mark entries to the existing Google Apps Script endpoint? Review the preview before continuing.';
+      if (!window.confirm(confirmMessage)) return;
+
+      const snapshot = entries.map(({ id, ...entry }) => entry);
+      submitBatchButton.disabled = true;
+      clearPreviewButton.disabled = true;
+      addButton.disabled = true;
+      form.querySelectorAll('input').forEach(input => { input.disabled = true; });
+      showBatchStatus('Sending ' + snapshot.length + ' entries. Please keep this page open…', 'warning');
+
+      let sentRequests = 0;
+      try {
+        for (let i = 0; i < snapshot.length; i++) {
+          const payload = new URLSearchParams();
+          Object.entries(snapshot[i]).forEach(([key, value]) => payload.append(key, value));
+          // no-cors allows a simple form-encoded cross-origin POST, but the response is opaque.
+          await fetch(SCRIPT_URL, { method: 'POST', mode: 'no-cors', body: payload });
+          sentRequests++;
+          showBatchStatus('Sent request ' + sentRequests + ' of ' + snapshot.length + '. Please keep this page open…', 'warning');
+          if (i < snapshot.length - 1) await new Promise(resolve => setTimeout(resolve, 350));
+        }
+        batchLocked = true;
+        renderPreview();
+        showBatchStatus('The browser has sent all ' + sentRequests + ' submission requests. It cannot verify that every row was saved by Google Apps Script. Check the destination Google Sheet before clearing this batch. The preview is locked to help prevent accidental duplicate submissions.', 'warning');
+      } catch (error) {
+        batchLocked = true;
+        renderPreview();
+        showBatchStatus('The connection stopped after ' + sentRequests + ' request(s) were sent. Some rows may already have been recorded. Check the destination Google Sheet before retrying; do not resend the whole batch blindly.', 'error');
+      }
+    });
+
+    // Enforce the score range in the input and render the initially empty batch.
+    const marksInput = document.getElementById('marksInput');
+    marksInput.addEventListener('input', function () {
+      const value = Number(marksInput.value);
+      if (marksInput.value !== '' && (!Number.isFinite(value) || value < 0 || value > 100)) {
+        marksInput.setCustomValidity('Enter a mark between 0 and 100.');
+      } else {
+        marksInput.setCustomValidity('');
+      }
+    });
+    renderPreview();
+  </script>
+</body>
+</html>
