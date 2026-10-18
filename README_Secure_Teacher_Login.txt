@@ -3,6 +3,8 @@ HILLTOP INTERNATIONAL BRITISH SCHOOL — SECURE MARKS PORTAL
 
 This package adds a shared teacher login session for all pages, a separate administrator login, and a protected same-origin submission gateway. It uses Cloudflare Pages Functions (JavaScript, not PHP) while keeping GitHub as the source repository.
 
+IMPORTANT: Functions require a Cloudflare Pages project connected to Git. Cloudflare dashboard Direct Upload does not deploy Pages Functions. Test the deployment at `/auth/health` before entering a password.
+
 WHAT IS INCLUDED
 ----------------
 index.html                         modern school portal home page
@@ -15,6 +17,10 @@ admin-login.html                   separate administrator login
 login.html                         shared teacher login
 Hilltop_Exam_Report_System.html    exam report tool (protected by site-wide middleware)
 functions/_middleware.js           session authentication for all published paths
+functions/auth/teacher-login.js    explicit teacher login route
+functions/auth/admin-login.js      explicit administrator login route
+functions/auth/logout.js           explicit logout route
+functions/auth/health.js           public deployment test endpoint
 functions/_utils/proxy.js          protected Google Apps Script submission proxy
 functions/api/submit/*.js          protected exam / midterm / mock routes
 APPS_SCRIPT_SECURITY_PATCH.txt     required next step to protect the three endpoints
@@ -86,5 +92,8 @@ Official Cloudflare documentation:
 - Pages secrets and bindings: https://developers.cloudflare.com/pages/functions/bindings/
 - Git integration: https://developers.cloudflare.com/pages/configuration/git-integration/
 
-TROUBLESHOOTING: HTTP ERROR 405 AT /__auth/teacher-login
-Open https://YOUR-PROJECT.pages.dev/login.html to use the actual login form. The /__auth/teacher-login path processes the form submission and should not be opened as the login page. The updated middleware redirects direct GET visits to /login.html (and direct GET visits to /__auth/admin-login to /admin-login.html), instead of displaying HTTP 405. If you already deployed an older package, replace functions/_middleware.js with the version in this package and redeploy. Ensure login.html still contains <form method="post" action="/__auth/teacher-login">.
+TROUBLESHOOTING: HTTP ERROR 405 AT THE LOGIN ENDPOINT
+This package uses explicit Cloudflare Pages Function routes under /auth/* (rather than the old /__auth/* URLs). The teacher form must post to /auth/teacher-login and administrator form to /auth/admin-login. First check https://YOUR-PROJECT.pages.dev/auth/health . It should return JSON containing {"ok":true,"service":"hilltop-pages-functions"}.
+- If /auth/health returns 404/405 or a static error page, Cloudflare Pages Functions are not deployed or the deployment is not using this repository's Functions source. In Cloudflare dashboard, open Workers & Pages > your Pages project > Settings > Builds & deployments; use Git integration connected to this repository, build command `node build.mjs`, and output directory `dist`. Do not use the dashboard's Direct Upload method for this package: Cloudflare documents that Direct Upload is not supported with Pages Functions.
+- Confirm `functions/` is at the repository root beside `build.mjs`, NOT inside `dist/`. Commit the changes and wait for a successful production deployment.
+- When `/auth/health` returns `ok:true`, open https://YOUR-PROJECT.pages.dev/login.html and submit the teacher code. It should redirect to `/index.html` on success or back to `/login.html?error=1` on a wrong code, never remain on the POST endpoint with HTTP 405.
