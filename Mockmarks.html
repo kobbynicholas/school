@@ -217,6 +217,10 @@
         <svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1V10Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
         Home
       </a>
+      <a class="home-link" href="/__auth/logout" aria-label="Log out of the teacher portal">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M10 17l5-5-5-5M15 12H3M14 3h5a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Log out
+      </a>
     </header>
 
     <section class="layout" aria-label="Mock examination marks portal">
@@ -243,7 +247,7 @@
           <span class="marks-chip">Score: / 100</span>
         </div>
 
-        <form method="post" action="https://script.google.com/macros/s/AKfycbyitxa8TRVTTAYSwSrP5stfqsPpLxNFqDooJyMu1coYJJJb0HUTQJE7eHLLcIkJmPyD/exec" name="contact-form" id="mockMarksForm" autocomplete="on" onsubmit="return false;">
+        <form method="post" action="/api/submit/mock" name="contact-form" id="mockMarksForm" autocomplete="on" onsubmit="return false;">
             <div id="configStatus" class="config-status loading" role="status" aria-live="polite"><strong>Loading school configuration…</strong>Loading the administrator's student list and reporting period.</div>
             
           <div class="form-grid">
@@ -297,7 +301,7 @@
             </div>
             <div class="field">
               <label for="seriesInput">Mock series <span class="required">*</span></label>
-              <input id="seriesInput" type="text" name="Mock Series" value="Mock 1" required>
+              <input id="seriesInput" type="text" name="Mock Series" value="Mock 3" required>
             </div>
           </div>
           <div class="form-divider"></div>
@@ -346,7 +350,7 @@
             <button id="clearPreviewButton" class="secondary-button" type="button" disabled>Clear preview</button>
             <button id="submitBatchButton" class="submit-button batch-submit" type="button" disabled>Submit all entries <span class="button-arrow" aria-hidden="true">→</span></button>
           </div>
-          <p class="submission-note"><strong>Important:</strong> contact Sir Nicholas if you have any issue.</p>
+          <p class="submission-note"><strong>Important:</strong> GitHub Pages cannot read the confirmation response from this Google Apps Script endpoint. After sending, check the destination Google Sheet before clearing the preview or attempting another submission.</p>
         </section>
       </section>
     </section>
@@ -360,7 +364,7 @@
   <script>
     // GitHub Pages has no PHP/backend. This browser-side queue sends each row
     // to the existing Google Apps Script endpoint as a separate form-urlencoded POST.
-    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyitxa8TRVTTAYSwSrP5stfqsPpLxNFqDooJyMu1coYJJJb0HUTQJE7eHLLcIkJmPyD/exec';
+    const SCRIPT_URL = form.action;
     const form = document.getElementById('mockMarksForm');
     const addButton = document.getElementById('myButton');
     const formStatus = document.getElementById('formStatus');
@@ -561,18 +565,27 @@
           const payload = new URLSearchParams();
           Object.entries(snapshot[i]).forEach(([key, value]) => payload.append(key, value));
           // no-cors allows a simple form-encoded cross-origin POST, but the response is opaque.
-          await fetch(SCRIPT_URL, { method: 'POST', mode: 'no-cors', body: payload });
+          const response = await fetch(SCRIPT_URL, {
+              method: 'POST',
+              credentials: 'same-origin',
+              headers: { 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' },
+              body: payload.toString()
+            });
+            const gatewayResult = await response.json().catch(() => ({}));
+            if (!response.ok || gatewayResult.ok !== true) {
+              throw new Error(gatewayResult.message || 'The secure submission gateway rejected the request (HTTP ' + response.status + ').');
+            }
           sentRequests++;
           showBatchStatus('Sent request ' + sentRequests + ' of ' + snapshot.length + '. Please keep this page open…', 'warning');
           if (i < snapshot.length - 1) await new Promise(resolve => setTimeout(resolve, 350));
         }
         batchLocked = true;
         renderPreview();
-        showBatchStatus('The browser has sent all ' + sentRequests + ' submission requests. It cannot verify that every row was saved by Google Apps Script. Check the destination Google Sheet before clearing this batch. The preview is locked to help prevent accidental duplicate submissions.', 'warning');
+        showBatchStatus('The browser has sent all ' + sentRequests + ' submission requests. Check the destination Google Sheet to confirm that every row was saved. Check the destination Google Sheet before clearing this batch. The preview is locked to help prevent accidental duplicate submissions.', 'warning');
       } catch (error) {
         batchLocked = true;
         renderPreview();
-        showBatchStatus('The connection stopped after ' + sentRequests + ' request(s) were sent. Some rows may already have been recorded. Check the destination Google Sheet before retrying; do not resend the whole batch blindly.', 'error');
+        showBatchStatus('The batch stopped after ' + sentRequests + ' request(s). ' + (error && error.message ? error.message + ' ' : '') + 'Some rows may already have been recorded. Check the destination Google Sheet before retrying; do not resend the batch blindly.', 'error');
       }
     });
 

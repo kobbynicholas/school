@@ -207,6 +207,7 @@
       <nav class="top-actions" aria-label="Main navigation">
         <a class="nav-link" href="index.html"><span aria-hidden="true">←</span> Home</a>
         <a class="nav-link primary" href="mid-data.html">Entered Data</a>
+        <a class="nav-link" href="/__auth/logout">Log out</a>
       </nav>
     </header>
 
@@ -218,7 +219,7 @@
           <p class="intro">Record student results accurately using the form below. Complete every required field before submitting the marks.</p>
         </div>
         <div class="form-body">
-          <form method="post" action="https://script.google.com/macros/s/AKfycbz9BLpopH4yo6afyPm4jV5H5hmgT9DVBCia6DN4ffy4TeXUslG6QJKVYpXQHt6FJLD3/exec" name="contact-form" id="marksForm" autocomplete="on">
+          <form method="post" action="/api/submit/midterm" name="contact-form" id="marksForm" autocomplete="on">
             <div id="configStatus" class="config-status loading" role="status" aria-live="polite"><strong>Loading school configuration…</strong>Loading the administrator's student list and reporting period.</div>
             
             <div class="form-grid">
@@ -312,7 +313,7 @@
                 <button id="submitBatchButton" class="batch-button primary" type="button" disabled>Submit all entries <span aria-hidden="true">→</span></button>
               </div>
             </div>
-            <p class="submission-note"><strong>Important:</strong> contact Sir Nicholas if you have any issue.</p>
+            <p class="submission-note"><strong>Important:</strong> GitHub Pages cannot read the confirmation response from Google Apps Script. After sending, check the destination Google Sheet before clearing the preview or attempting another submission. Keep this page open while the batch sends.</p>
           </section>
         </div>
       </section>
@@ -334,8 +335,8 @@
   </main>
 
   <script>
-    // Browser-only bulk-entry workflow for GitHub Pages.
-    // Each entry is POSTed in the same field format as the original form.
+    // Bulk-entry workflow using the authenticated Cloudflare Pages submission gateway.
+    // Each entry is POSTed to a session-protected same-origin gateway using the original field names.
     (function () {
       const form = document.getElementById('marksForm');
       if (!form) return;
@@ -554,18 +555,27 @@
             const payload = new URLSearchParams();
             Object.entries(snapshot[i]).forEach(([key, value]) => payload.append(key, value));
             // no-cors allows the form-encoded POST; its response is opaque in the browser.
-            await fetch(SCRIPT_URL, { method: 'POST', mode: 'no-cors', body: payload });
+            const response = await fetch(SCRIPT_URL, {
+              method: 'POST',
+              credentials: 'same-origin',
+              headers: { 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' },
+              body: payload.toString()
+            });
+            const gatewayResult = await response.json().catch(() => ({}));
+            if (!response.ok || gatewayResult.ok !== true) {
+              throw new Error(gatewayResult.message || 'The secure submission gateway rejected the request (HTTP ' + response.status + ').');
+            }
             sentRequests++;
             showBatchStatus('Sent request ' + sentRequests + ' of ' + snapshot.length + '. Keep this page open…');
             if (i < snapshot.length - 1) await new Promise(resolve => setTimeout(resolve, 350));
           }
           batchLocked = true;
           renderPreview();
-          showBatchStatus('The browser sent all ' + sentRequests + ' submission requests. It cannot verify that every row was saved by Google Apps Script. Check the destination Google Sheet before clearing this batch. The preview is locked to help prevent accidental duplicate submissions.');
+          showBatchStatus('The gateway accepted all ' + sentRequests + ' submission requests. Check the destination Google Sheet to confirm that every row was saved. Check the destination Google Sheet before clearing this batch. The preview is locked to help prevent accidental duplicate submissions.');
         } catch (error) {
           batchLocked = true;
           renderPreview();
-          showBatchStatus('The connection stopped after ' + sentRequests + ' request(s). Some marks may already have been recorded. Check the destination Google Sheet before retrying; do not resend the batch blindly.', 'error');
+          showBatchStatus('The batch stopped after ' + sentRequests + ' request(s). ' + (error && error.message ? error.message + ' ' : '') + 'Some marks may already have been recorded. Check the destination Google Sheet before retrying; do not resend the batch blindly.', 'error');
         }
       });
 

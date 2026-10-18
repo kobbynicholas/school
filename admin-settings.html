@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#32114f">
+<title>Administrator Settings | Hilltop International British School</title>
+<style>
+:root{--deep:#211033;--purple:#512779;--purple2:#6b3795;--gold:#e9b949;--ink:#272135;--muted:#70697d;--line:#e6dfed;--bg:#f5f2f8;--green:#176b4b;--red:#a32f42}
+*{box-sizing:border-box}
+body{margin:0;padding:24px 14px 40px;font-family:Inter,"Segoe UI",Arial,sans-serif;background:radial-gradient(circle at 8% 0%,#56327b 0,transparent 28rem),linear-gradient(140deg,#211033,#3c195c);color:var(--ink);min-height:100vh}
+.shell{width:min(1050px,100%);margin:0 auto}
+header{display:flex;align-items:center;justify-content:space-between;gap:14px;color:white;margin-bottom:22px;flex-wrap:wrap}
+.brand{display:flex;gap:13px;align-items:center}.brand-mark{background:var(--gold);color:var(--deep);font-weight:900;padding:13px;border-radius:14px;box-shadow:0 8px 20px #0002}.brand h1{margin:0;font-size:1.05rem}.brand p{margin:4px 0 0;color:#ffffffb8;font-size:.82rem}
+a{color:inherit}.nav{border:1px solid #ffffff55;padding:10px 14px;border-radius:10px;color:white;text-decoration:none;font-weight:700;font-size:.88rem}
+.card{background:white;border-radius:20px;overflow:hidden;box-shadow:0 24px 65px #12051f55;margin-bottom:18px}
+.card-head{padding:24px 28px;border-bottom:1px solid var(--line)}.eyebrow{font-size:.72rem;letter-spacing:.13em;text-transform:uppercase;color:var(--purple2);font-weight:850}.card-head h2{margin:10px 0 7px;font-size:clamp(1.4rem,3vw,2rem);letter-spacing:-.035em;color:var(--deep)}.card-head p{margin:0;color:var(--muted);line-height:1.6;max-width:760px}
+.body{padding:24px 28px 28px}
+.notice{padding:14px 16px;border-radius:12px;border:1px solid #f0dba5;background:#fff9e8;color:#644916;font-size:.87rem;line-height:1.6;margin-bottom:18px}.notice strong{color:#51370c}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.field{min-width:0}.field.full{grid-column:1/-1}label{display:block;font-weight:800;font-size:.86rem;margin-bottom:7px;color:#383045}
+input[type=text],input[type=file]{width:100%;min-height:47px;border:1px solid #d8d0e2;border-radius:11px;padding:11px 13px;font:inherit;background:#fff;color:var(--ink)}input:focus{outline:3px solid #6b379526;border-color:var(--purple2)}
+.hint{font-size:.76rem;color:var(--muted);line-height:1.55;margin:7px 0 0}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}.btn{border:0;border-radius:11px;min-height:46px;padding:11px 17px;font:inherit;font-size:.87rem;font-weight:850;cursor:pointer}.btn.primary{background:linear-gradient(135deg,var(--purple),var(--deep));color:white;box-shadow:0 8px 18px #32114f2b}.btn.secondary{background:white;color:var(--purple);border:1px solid #d9cde6}.btn:disabled{opacity:.5;cursor:not-allowed}
+.status{display:none;padding:12px 14px;margin-top:16px;border-radius:10px;background:#edf8f1;color:var(--green);border:1px solid #cbe8d5;line-height:1.5;font-size:.86rem}.status.show{display:block}.status.error{background:#fff0f1;color:var(--red);border-color:#f5cbd1}
+.summary{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:20px 0 12px}.summary strong{color:var(--deep)}.pillrow{display:flex;gap:7px;flex-wrap:wrap}.pill{background:#f2eafa;color:var(--purple);padding:6px 9px;border-radius:999px;font-size:.74rem;font-weight:800}
+.table-wrap{overflow:auto;max-height:410px;border:1px solid var(--line);border-radius:12px}.table{border-collapse:collapse;width:100%;font-size:.82rem;min-width:460px}.table th{position:sticky;top:0;background:#f6f1fa;text-align:left;color:#5e4973;font-size:.72rem;text-transform:uppercase;letter-spacing:.05em}.table th,.table td{padding:10px 12px;border-bottom:1px solid #eee8f3}.table tr:last-child td{border-bottom:0}.table tbody tr:nth-child(even){background:#fcfaff}
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.step{border:1px solid var(--line);border-radius:12px;padding:14px;background:#fcfbfe}.step b{display:block;color:var(--purple);margin-bottom:5px}.step span{font-size:.8rem;line-height:1.55;color:var(--muted)}
+footer{color:#ffffffa6;text-align:center;font-size:.76rem;padding:14px}
+@media(max-width:650px){body{padding:14px 10px 28px}.card-head,.body{padding:20px 17px}.grid,.steps{grid-template-columns:1fr}.field.full{grid-column:auto}.brand h1{font-size:.9rem}}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+</head>
+<body>
+<div class="shell">
+<header>
+  <div class="brand"><div class="brand-mark">HIBS</div><div><h1>HILLTOP INTERNATIONAL BRITISH SCHOOL</h1><p>Office of Internal Examinations · Administrator Tools</p></div></div>
+  <div style="display:flex;gap:9px;flex-wrap:wrap;justify-content:flex-end">
+    <a class="nav" href="exams.html">← Back to marks entry</a>
+    <a class="nav" href="/__auth/logout">Log out</a>
+  </div>
+</header>
+<section class="card">
+  <div class="card-head"><div class="eyebrow">Administrator settings</div><h2>Manage class list and reporting period</h2><p>Upload the latest class list workbook and set the academic year and term without editing the HTML. The page creates a new <strong>class-config.json</strong> file for the website to use.</p></div>
+  <div class="body">
+    <div class="notice"><strong>Important about administrator access:</strong> GitHub Pages is static and cannot securely save shared settings itself. This page prepares the settings file; they become live only after you replace <code>class-config.json</code> in your GitHub repository and commit the change. Keep repository write access restricted to you (the administrator). Do not put a GitHub access token or password in this HTML page.</div>
+    <div class="grid">
+      <div class="field">
+        <label for="academicYear">Academic year</label>
+        <input id="academicYear" type="text" value="2025/2026" placeholder="e.g. 2026/2027" required>
+        <p class="hint">Example: 2026/2027. This value appears on submitted marks.</p>
+      </div>
+      <div class="field">
+        <label for="term">Term</label>
+        <input id="term" type="text" value="Term 3" placeholder="e.g. Term 1" required>
+        <p class="hint">Example: Term 1, Term 2 or Term 3.</p>
+      </div>
+      <div class="field full">
+        <label for="classFile">Upload the latest class list (.xlsx or .xls)</label>
+        <input id="classFile" type="file" accept=".xlsx,.xls" />
+        <p class="hint">The first worksheet should contain a header row with <strong>NAME</strong> and <strong>YEAR</strong>. An <strong>ID</strong> column is optional. Common header alternatives such as Student Name, Year Group, Class and Student ID are also supported.</p>
+      </div>
+    </div>
+    <div class="actions">
+      <button id="importButton" class="btn secondary" type="button">Import and preview Excel</button>
+      <button id="downloadButton" class="btn primary" type="button" disabled>Download class-config.json</button>
+    </div>
+    <div id="status" class="status" role="status" aria-live="polite"></div>
+    <div class="summary">
+      <strong id="rosterSummary">No class list loaded yet</strong>
+      <div id="yearPills" class="pillrow"></div>
+    </div>
+    <div class="table-wrap">
+      <table class="table">
+        <thead><tr><th>#</th><th>Student name</th><th>Year</th><th>Student ID (preview only)</th></tr></thead>
+        <tbody id="rosterBody"><tr><td colspan="4">Loading existing class list…</td></tr></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+<section class="card">
+  <div class="card-head"><div class="eyebrow">Publishing workflow</div><h2>Make the changes live</h2><p>These three steps keep the live roster and reporting period controlled by your GitHub repository permissions.</p></div>
+  <div class="body">
+    <div class="steps">
+      <div class="step"><b>1. Upload and generate</b><span>Import the Excel class list, set the academic year and term, then download class-config.json.</span></div>
+      <div class="step"><b>2. Replace the JSON file</b><span>Upload the downloaded class-config.json to the same repository folder as exams.html, replacing the old one.</span></div>
+      <div class="step"><b>3. Commit the change</b><span>Commit to GitHub. After GitHub Pages redeploys, teachers receive the updated names, year groups and reporting period.</span></div>
+    </div>
+  </div>
+</section>
+<footer>© 2026 HILLTOP INTERNATIONAL BRITISH SCHOOL · ADMINISTRATOR SETTINGS</footer>
+</div>
+<script>
+(() => {
+  const fileInput = document.getElementById('classFile');
+  const yearInput = document.getElementById('academicYear');
+  const termInput = document.getElementById('term');
+  const importButton = document.getElementById('importButton');
+  const downloadButton = document.getElementById('downloadButton');
+  const statusBox = document.getElementById('status');
+  const rosterBody = document.getElementById('rosterBody');
+  const rosterSummary = document.getElementById('rosterSummary');
+  const yearPills = document.getElementById('yearPills');
+  let students = [];
+  let previewIds = new Map();
+
+  function message(text, error=false) {
+    statusBox.textContent = text;
+    statusBox.className = 'status show' + (error ? ' error' : '');
+  }
+  function normalizeHeader(value) {
+    return String(value || '').normalize('NFKD').replace(/[\u0300-\u036f]/g,'').toUpperCase().replace(/[^A-Z0-9]/g,'');
+  }
+  function normalizeName(value) {
+    return String(value || '').trim().replace(/\s+/g,' ').toLocaleUpperCase();
+  }
+  function yearValue(value) {
+    const valueText = String(value ?? '').trim();
+    const match = valueText.match(/\d+/);
+    return match ? String(Number(match[0])) : '';
+  }
+  function renderRoster() {
+    rosterBody.replaceChildren();
+    const counts = {};
+    students.forEach(student => counts[student.year] = (counts[student.year] || 0) + 1);
+    const years = Object.keys(counts).sort((a,b)=>Number(a)-Number(b));
+    if (!students.length) {
+      const tr = document.createElement('tr'), td = document.createElement('td');
+      td.colSpan = 4; td.textContent = 'No students are loaded. Import an Excel class list to begin.';
+      tr.appendChild(td); rosterBody.appendChild(tr);
+    } else {
+      students.forEach((student,index) => {
+        const tr = document.createElement('tr');
+        [String(index+1), student.name, student.year, student.id || '—'].forEach(value => {
+          const td = document.createElement('td'); td.textContent = value; tr.appendChild(td);
+        });
+        rosterBody.appendChild(tr);
+      });
+    }
+    rosterSummary.textContent = students.length ? students.length + ' students loaded' : 'No class list loaded yet';
+    yearPills.replaceChildren();
+    years.forEach(year => {
+      const pill = document.createElement('span'); pill.className = 'pill';
+      pill.textContent = 'Year ' + year + ': ' + counts[year]; yearPills.appendChild(pill);
+    });
+    downloadButton.disabled = !students.length || !yearInput.value.trim() || !termInput.value.trim();
+  }
+
+  function extractStudents(rows) {
+    let headerIndex = -1, nameIndex = -1, yearIndex = -1, idIndex = -1;
+    const nameHeaders = new Set(['NAME','STUDENTNAME','FULLNAME','STUDENT','STUDENTFULLNAME']);
+    const yearHeaders = new Set(['YEAR','YEARGROUP','CLASS','CLASSYEAR','LEVEL','GRADE']);
+    const idHeaders = new Set(['ID','STUDENTID','STUDENTCODE','ADMISSIONNO','ADMISSIONNUMBER','STUDENTNUMBER']);
+    for (let r=0; r<Math.min(rows.length,20); r++) {
+      const normalized = (rows[r] || []).map(normalizeHeader);
+      const n = normalized.findIndex(h=>nameHeaders.has(h));
+      const y = normalized.findIndex(h=>yearHeaders.has(h));
+      if (n >= 0 && y >= 0) {
+        headerIndex = r; nameIndex = n; yearIndex = y; idIndex = normalized.findIndex(h=>idHeaders.has(h));
+        break;
+      }
+    }
+    if (headerIndex < 0) throw new Error('Could not find a header row with NAME and YEAR. Please check the first worksheet.');
+    const deduped = new Map();
+    for (let r=headerIndex+1; r<rows.length; r++) {
+      const row = rows[r] || [];
+      const rawName = String(row[nameIndex] ?? '').trim();
+      const year = yearValue(row[yearIndex]);
+      const id = idIndex >= 0 ? String(row[idIndex] ?? '').trim() : '';
+      if (!rawName || !year) continue;
+      const name = rawName.replace(/\s+/g,' ');
+      const key = normalizeName(name) + '|' + year;
+      if (!deduped.has(key)) deduped.set(key,{name,year,id});
+      else if (!deduped.get(key).id && id) deduped.get(key).id = id;
+    }
+    const result = [...deduped.values()].sort((a,b)=>(Number(a.year)-Number(b.year)) || a.name.localeCompare(b.name));
+    if (!result.length) throw new Error('The header was found, but no rows with both student name and year group were found.');
+    return result;
+  }
+
+  importButton.addEventListener('click', async () => {
+    const file = fileInput.files && fileInput.files[0];
+    if (!file) { message('Choose the class-list Excel file first.', true); return; }
+    if (!window.XLSX) { message('The Excel-reading library did not load. Check your internet connection and reload this page.', true); return; }
+    importButton.disabled = true;
+    try {
+      const data = await file.arrayBuffer();
+      const workbook = XLSX.read(data,{type:'array'});
+      const firstSheet = workbook.Sheets[workbook.SheetNames[0]];
+      const rows = XLSX.utils.sheet_to_json(firstSheet,{header:1,defval:'',raw:false});
+      students = extractStudents(rows);
+      renderRoster();
+      message('Imported ' + students.length + ' unique students from "' + file.name + '". Duplicate name/year rows were combined. Student IDs are shown only in this admin preview and are not exported to the public configuration.');
+    } catch (error) {
+      message(error.message || 'Could not read this workbook.', true);
+    } finally {
+      importButton.disabled = false;
+      renderRoster();
+    }
+  });
+
+  function downloadConfig() {
+    if (!students.length) { message('Import a class list or load the existing one first.', true); return; }
+    const academicYear = yearInput.value.trim();
+    const term = termInput.value.trim();
+    if (!academicYear || !term) { message('Enter both academic year and term.', true); return; }
+    const config = {
+      schemaVersion: 1,
+      academicYear,
+      term,
+      updatedAt: new Date().toISOString(),
+      students: students.map(student => ({name:student.name,year:String(student.year)}))
+    };
+    const blob = new Blob([JSON.stringify(config,null,2)],{type:'application/json;charset=utf-8'});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url; a.download = 'class-config.json';
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(()=>URL.revokeObjectURL(url),1000);
+    message('Downloaded class-config.json for ' + term + ', ' + academicYear + '. Replace the existing class-config.json beside exams.html in GitHub, then commit the file. Live settings will not change until that deployment is published.');
+  }
+  downloadButton.addEventListener('click',downloadConfig);
+  yearInput.addEventListener('input',renderRoster);
+  termInput.addEventListener('input',renderRoster);
+
+  // Load the currently published configuration so changing only term/year does not require re-uploading Excel.
+  fetch('./class-config.json?v=' + Date.now(),{cache:'no-store'})
+    .then(response=>{if(!response.ok) throw new Error('No live config'); return response.json();})
+    .then(config=>{
+      students = Array.isArray(config.students) ? config.students.map(s=>({name:String(s.name||'').trim(),year:String(s.year||'').trim(),id:''})).filter(s=>s.name&&s.year) : [];
+      yearInput.value = config.academicYear || yearInput.value;
+      termInput.value = config.term || termInput.value;
+      renderRoster();
+      message('Loaded the current published settings. You can change the term/year alone, or import a new Excel class list before downloading the updated configuration.');
+    })
+    .catch(()=>{
+      students = [];
+      renderRoster();
+      message('Current configuration could not be fetched. You can still import an Excel class list and set the academic year and term here. Open this page through your GitHub Pages address, not directly as a local file.');
+    });
+})();
+</script>
+</body>
+</html>
