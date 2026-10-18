@@ -1,0 +1,38 @@
+HILLTOP MARKS PORTAL — GOOGLE APPS SCRIPT SECURITY PATCH
+
+Why this is needed
+------------------
+The Cloudflare login protects the website pages. Your three Google Apps Script web-app URLs are separate services. Unless each script checks a private token, someone who already knows a public /exec URL may post directly to it without visiting the login page.
+
+Do this for EACH of the three Apps Script projects (End-of-Term Exams, Mid-Term, and Mock):
+
+1. Open the Apps Script project that serves that assessment's /exec URL.
+2. Add this helper function once in the project:
+
+function isTrustedHilltopGateway_(e) {
+  var expected = PropertiesService.getScriptProperties().getProperty('GATEWAY_SECRET');
+  var supplied = (e && e.parameter) ? String(e.parameter._gatewaySecret || '') : '';
+  return Boolean(expected && supplied && supplied === expected);
+}
+
+3. At the VERY BEGINNING of that project's existing doPost(e) function, before it reads or writes any sheet, add this guard:
+
+if (!isTrustedHilltopGateway_(e)) {
+  return ContentService
+    .createTextOutput('Unauthorized')
+    .setMimeType(ContentService.MimeType.TEXT);
+}
+
+Do NOT replace your existing doPost(e) logic. Insert the guard at the top of it, and add the helper only once. If your script's entry point is structured differently, adapt the guard so it runs before any spreadsheet write.
+
+4. In Apps Script, open Project Settings > Script Properties and add:
+   Property: GATEWAY_SECRET
+   Value: EXACTLY THE SAME long random value you set as the encrypted Cloudflare Pages secret named GAS_SUBMISSION_SECRET.
+
+5. Save and redeploy the existing web app as a new version. Keep the /exec deployment URL used by the portal. Test one mark from the portal, then test that a direct request without _gatewaySecret is rejected.
+
+Repeat these steps separately for all three Apps Script web apps. Until every script has this guard, page access is protected but a person who knows an unguarded /exec URL may still post to that endpoint directly.
+
+Secret handling
+---------------
+Generate a long random secret (at least 32 characters) and enter it directly into the Cloudflare dashboard and each Apps Script project's Script Properties. Do not put the secret in HTML, JavaScript, JSON, README files, or GitHub. Keep the Apps Script projects' editor access limited to trusted administrators.

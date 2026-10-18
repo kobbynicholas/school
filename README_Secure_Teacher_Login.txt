@@ -85,3 +85,6 @@ Official Cloudflare documentation:
 - Static HTML / Pages deployment: https://developers.cloudflare.com/pages/framework-guides/deploy-anything/
 - Pages secrets and bindings: https://developers.cloudflare.com/pages/functions/bindings/
 - Git integration: https://developers.cloudflare.com/pages/configuration/git-integration/
+
+TROUBLESHOOTING: HTTP ERROR 405 AT /__auth/teacher-login
+Open https://YOUR-PROJECT.pages.dev/login.html to use the actual login form. The /__auth/teacher-login path processes the form submission and should not be opened as the login page. The updated middleware redirects direct GET visits to /login.html (and direct GET visits to /__auth/admin-login to /admin-login.html), instead of displaying HTTP 405. If you already deployed an older package, replace functions/_middleware.js with the version in this package and redeploy. Ensure login.html still contains <form method="post" action="/__auth/teacher-login">.
