@@ -2,54 +2,46 @@
   "schemaVersion": 1,
   "academicYear": "2026/2027",
   "term": "Term 1",
-  "updatedAt": "2026-10-18T09:25:41.060Z",
+  "updatedAt": "2026-10-23T19:50:06.701Z",
   "students": [
     {
-      "name": "LINGISETTY VISHISHTA KUSHI",
+      "name": "ABOAGYE ELVIN",
       "year": "3"
     },
     {
+      "name": "SEFAH BEDIAKO LIONEL KWAKU",
+      "year": "3"
+    },
+    {
+      "name": "LOMOTEY YAA NAKI",
+      "year": "4"
+    },
+    {
+      "name": "PREMPEH NANA OSEI TUTU",
+      "year": "4"
+    },
+    {
+      "name": "YAMOAH AWURAMA ADEPA FOSUAH",
+      "year": "4"
+    },
+    {
       "name": "AMPOFO SIMON ABDIEL",
-      "year": "4"
-    },
-    {
-      "name": "ASHUN SELORM JADEN",
-      "year": "4"
-    },
-    {
-      "name": "ASHUN SEYRAM JUSTIN",
-      "year": "4"
-    },
-    {
-      "name": "BEDU - ADDO ANDREW KOFI",
-      "year": "4"
-    },
-    {
-      "name": "ELIARA AMA ACQUAH",
-      "year": "4"
-    },
-    {
-      "name": "ESTHER ASARE",
-      "year": "4"
-    },
-    {
-      "name": "GYIMAH ANTHONY - NATHAN KOFI BAFFOUR AWUAH",
-      "year": "4"
-    },
-    {
-      "name": "KWAKU DUAH JUNIOR",
-      "year": "4"
-    },
-    {
-      "name": "OWUSU NKETIA AYLA",
-      "year": "4"
-    },
-    {
-      "name": "ADARKWAH AVA MARISSA",
       "year": "5"
     },
     {
-      "name": "AMANKWAH JADEN JAMES",
+      "name": "ASHUN SELORM JADEN",
+      "year": "5"
+    },
+    {
+      "name": "ASHUN SEYRAM JUSTIN",
+      "year": "5"
+    },
+    {
+      "name": "ASIEDU NKETIAH NANA ASANTE JAMIN",
+      "year": "5"
+    },
+    {
+      "name": "BEDU - ADDO ANDREW KOFI",
       "year": "5"
     },
     {
@@ -57,19 +49,19 @@
       "year": "5"
     },
     {
-      "name": "GENFI ALEXIS DUFIE",
+      "name": "ESTHER ASARE",
       "year": "5"
     },
     {
-      "name": "GYIMAH ELEANOR AMPOMAH",
+      "name": "GYIMAH ANTHONY - NATHAN KOFI BAFFOUR AWUAH",
       "year": "5"
     },
     {
-      "name": "KAKA SHAFEEK",
+      "name": "KWAKU DUAH JUNIOR",
       "year": "5"
     },
     {
-      "name": "LOMOTEY KWAKU AMPONSAH",
+      "name": "LINGISETTY VISHISHTA KUSHI",
       "year": "5"
     },
     {
@@ -77,23 +69,27 @@
       "year": "5"
     },
     {
-      "name": "OWUSU NKETIA ISLA",
+      "name": "OWUSU KORANTENG AKYEDEA REGINALD",
       "year": "5"
     },
     {
-      "name": "PRINCESS SARFOWAA OFORI AMOAH",
+      "name": "OWUSU NKETIA AYLA",
       "year": "5"
     },
     {
-      "name": "YEBOAH THEODORE",
+      "name": "OWUSU PATRICIA",
       "year": "5"
     },
     {
-      "name": "ADUSEI AFIA KYEIWAA NHYIRA",
+      "name": "ADARKWAH AVA MARISSA",
       "year": "6"
     },
     {
-      "name": "AFARI IDUN JEFFREY JNR",
+      "name": "ADJEM T. ELI",
+      "year": "6"
+    },
+    {
+      "name": "ADU - GYAMFI AFIA NANA",
       "year": "6"
     },
     {
@@ -101,31 +97,19 @@
       "year": "6"
     },
     {
-      "name": "AMANKWA MICHAEL ELIKEM",
+      "name": "AMANKWAH JADEN JAMES",
       "year": "6"
     },
     {
-      "name": "APPIAH KUBI GILDA PRICE",
+      "name": "GENFI ALEXIS DUFIE",
       "year": "6"
     },
     {
-      "name": "BOADU DARKO DAISY NHYIRA",
+      "name": "GYIMAH ELEANOR AMPOMAH",
       "year": "6"
     },
     {
-      "name": "DARKWAH KWAKU YEBOAH",
-      "year": "6"
-    },
-    {
-      "name": "GENFI D'MITRY",
-      "year": "6"
-    },
-    {
-      "name": "GUIRO FARIDATOU",
-      "year": "6"
-    },
-    {
-      "name": "GYIMAH LESLEY - EMELINE AFRA",
+      "name": "KAKA SHAFEEK",
       "year": "6"
     },
     {
@@ -133,47 +117,83 @@
       "year": "6"
     },
     {
-      "name": "KWAKYE JAKE NANA",
+      "name": "LEVETTE ANNING",
       "year": "6"
     },
     {
-      "name": "MENSAH NANA KWABENA GYAMFI",
+      "name": "LOMOTEY KWAKU AMPONSAH",
       "year": "6"
     },
     {
-      "name": "OFORI EMMANUEL NYAMEAMA",
+      "name": "OPOKU FOSUAAH PRISCILLA",
       "year": "6"
     },
     {
-      "name": "WIREKO AGYEMAN NHYIRABA DARKOA",
+      "name": "OWUSU JUDAH",
       "year": "6"
     },
     {
-      "name": "YAWSON RUDDEM-MARIE",
+      "name": "OWUSU NKETIA ISLA",
       "year": "6"
     },
     {
-      "name": "ABDUL - FATAWU RUKAYA",
+      "name": "OWUSU SERWAA CHRISTABEL",
+      "year": "6"
+    },
+    {
+      "name": "PRINCESS SARFOWAA OFORI AMOAH",
+      "year": "6"
+    },
+    {
+      "name": "YEBOAH THEODORE",
+      "year": "6"
+    },
+    {
+      "name": "ADUSEI AFIA KYEIWAA NHYIRA",
       "year": "7"
     },
     {
-      "name": "ANIMBEDWA ADWOA SERWAA",
+      "name": "AFARI IDUN JEFFREY JNR",
       "year": "7"
     },
     {
-      "name": "ASHUN SELASIE JASON",
+      "name": "AKOSUA YAMOAH ASAMOAH",
       "year": "7"
     },
     {
-      "name": "CHIKANYIMA PRAISE IBEZIM",
+      "name": "AMANKWA MICHAEL ELIKEM",
       "year": "7"
     },
     {
-      "name": "EPHRAIM NII ADJEI",
+      "name": "APPIAH KUBI GILDA PRICE",
       "year": "7"
     },
     {
-      "name": "ETTEH SEFA VICTORY",
+      "name": "BOADU DARKO DAISY NHYIRA",
+      "year": "7"
+    },
+    {
+      "name": "DARKWAH KWAKU YEBOAH",
+      "year": "7"
+    },
+    {
+      "name": "DEBRAH-BARNOR CYRIL ONASSIS",
+      "year": "7"
+    },
+    {
+      "name": "GENFI D'MITRY",
+      "year": "7"
+    },
+    {
+      "name": "GUIRO FARIDATOU",
+      "year": "7"
+    },
+    {
+      "name": "GYIMAH LESLEY - EMELINE AFRA",
+      "year": "7"
+    },
+    {
+      "name": "ISHAQ SALIAH ODONKOSI",
       "year": "7"
     },
     {
@@ -181,7 +201,11 @@
       "year": "7"
     },
     {
-      "name": "LINGISETTY ABHIRAM GOUD",
+      "name": "KWAKYE JAKE NANA",
+      "year": "7"
+    },
+    {
+      "name": "MENSAH NANA KWABENA GYAMFI",
       "year": "7"
     },
     {
@@ -189,39 +213,59 @@
       "year": "7"
     },
     {
-      "name": "OHENENANA YAA OWUSU GYEMANG",
+      "name": "OFORI EMMANUEL NYAMEAMA",
       "year": "7"
     },
     {
-      "name": "OKYERE ANTWI TERRY JAYDEN",
+      "name": "SHOWN C. OYIBO",
       "year": "7"
     },
     {
-      "name": "SARPONG BEZALEL OPOKU",
+      "name": "WIREKO AGYEMAN NHYIRABA DARKOA",
       "year": "7"
     },
     {
-      "name": "WHAJAH MAC MARTIN JNR",
+      "name": "YAWSON RUDDEM-MARIE",
       "year": "7"
     },
     {
-      "name": "YEBOAH GELSOMINA",
-      "year": "7"
-    },
-    {
-      "name": "AGYEI ASTRID KONADU",
+      "name": "ABDUL - FATAWU RUKAYA",
       "year": "8"
     },
     {
-      "name": "AGYEMANG DUAH NANA",
+      "name": "ADJEI BENTLEY",
       "year": "8"
     },
     {
-      "name": "ANTWI NATHAN ASEDA KWESI TAKYI",
+      "name": "ANIMBEDWA ADWOA SERWAA",
       "year": "8"
     },
     {
-      "name": "DUAH NANA YAA EFFI ASANTEWAA",
+      "name": "ARMAH NERIAH AJELE NAA YEHOWASHIDAA",
+      "year": "8"
+    },
+    {
+      "name": "ASHUN SELASIE JASON",
+      "year": "8"
+    },
+    {
+      "name": "CHIKANYIMA PRAISE IBEZIM",
+      "year": "8"
+    },
+    {
+      "name": "EPHRAIM NII ADJEI",
+      "year": "8"
+    },
+    {
+      "name": "ETTEH SEFA VICTORY",
+      "year": "8"
+    },
+    {
+      "name": "IKOUMELEZE BLESSING MUNACHIMSO",
+      "year": "8"
+    },
+    {
+      "name": "LINGISETTY ABHIRAM GOUD",
       "year": "8"
     },
     {
@@ -229,43 +273,31 @@
       "year": "8"
     },
     {
-      "name": "MENLAH AWUBE ADWOBA",
+      "name": "OHENENANA YAA OWUSU GYEMANG",
       "year": "8"
     },
     {
-      "name": "OSEI CECILIA",
+      "name": "OKYERE ANTWI TERRY JAYDEN",
       "year": "8"
     },
     {
-      "name": "SALIAH AHMED NAZIR",
+      "name": "SARPONG BEZALEL OPOKU",
       "year": "8"
     },
     {
-      "name": "SERWAA FRANKLINA NANA",
+      "name": "WHAJAH MAC MARTIN JNR",
       "year": "8"
     },
     {
-      "name": "ADARKWAH ELSA BOADI",
+      "name": "YEBOAH GELSOMINA",
+      "year": "8"
+    },
+    {
+      "name": "AGYEI ASTRID KONADU",
       "year": "9"
     },
     {
-      "name": "AFARI IDUN BRIANA",
-      "year": "9"
-    },
-    {
-      "name": "AGYEI - NOMAFO NINA NANA AKUA ODURAA",
-      "year": "9"
-    },
-    {
-      "name": "AGYENIM - BOATENG GODWIN PRINCE",
-      "year": "9"
-    },
-    {
-      "name": "AMOAKO FAITH",
-      "year": "9"
-    },
-    {
-      "name": "AMOFA KOFI",
+      "name": "AGYEMANG DUAH NANA",
       "year": "9"
     },
     {
@@ -273,23 +305,23 @@
       "year": "9"
     },
     {
-      "name": "ASAMOAH AKOSUA NTRIWAA",
+      "name": "ANTWI NATHAN ASEDA KWESI TAKYI",
       "year": "9"
     },
     {
-      "name": "ASAMOAH EMMANUEL",
+      "name": "ASAMOAH KWABENA AGYARE OTU",
       "year": "9"
     },
     {
-      "name": "BATCHILLY HAGI",
+      "name": "DUAH NANA YAA EFFI ASANTEWAA",
       "year": "9"
     },
     {
-      "name": "BROBBEY NHYIRA YAW OWUSU",
+      "name": "KESSE NANA ADJOA BOSOMEFI",
       "year": "9"
     },
     {
-      "name": "DZANKU DAVID ANNAS",
+      "name": "LOH NATHAN",
       "year": "9"
     },
     {
@@ -297,7 +329,7 @@
       "year": "9"
     },
     {
-      "name": "MENSAH IRENE",
+      "name": "MENLAH AWUBE ADWOBA",
       "year": "9"
     },
     {
@@ -305,23 +337,15 @@
       "year": "9"
     },
     {
-      "name": "NII ARMAH PETER CORNELIUS YEHOWAJORMOR",
+      "name": "OSEI CECILIA",
       "year": "9"
     },
     {
-      "name": "ORLEANS - THOMPSON NANA AMA NHYIRA",
+      "name": "SALIAH AHMED NAZIR",
       "year": "9"
     },
     {
-      "name": "OWUSU - KARIKARI GRACELYN ABENA",
-      "year": "9"
-    },
-    {
-      "name": "OWUSU GARRIET GYAMFI",
-      "year": "9"
-    },
-    {
-      "name": "SARPONG KWABENA TWUM KUMANKUMA",
+      "name": "SERWAA FRANKLINA NANA",
       "year": "9"
     },
     {
@@ -333,35 +357,23 @@
       "year": "9"
     },
     {
-      "name": "YENTORGIT SOUNG ABIDAH",
-      "year": "9"
-    },
-    {
-      "name": "ZONGO BARKWEND JEREMY",
-      "year": "9"
-    },
-    {
-      "name": "ABDUL MALIK AYISHA",
+      "name": "ADARKWAH ELSA BOADI",
       "year": "10"
     },
     {
-      "name": "ADDO EUGELLA AKOSUA AGYAPOMAA",
+      "name": "ADJEM EVELYN RENE",
       "year": "10"
     },
     {
-      "name": "AFARI IDUN KAYLA",
+      "name": "AFARI IDUN BRIANA",
       "year": "10"
     },
     {
-      "name": "AFRIYIE NANA KWADWO NSIAH ASARE",
+      "name": "AGYEI - NOMAFO NINA NANA AKUA ODURAA",
       "year": "10"
     },
     {
-      "name": "AGYEMANG - AMOFAH MAAME BIRAGO",
-      "year": "10"
-    },
-    {
-      "name": "AKUOKO ADWOA KONADU",
+      "name": "AGYENIM - BOATENG GODWIN PRINCE",
       "year": "10"
     },
     {
@@ -369,19 +381,23 @@
       "year": "10"
     },
     {
+      "name": "AMOAKO FAITH",
+      "year": "10"
+    },
+    {
+      "name": "AMOFA KOFI",
+      "year": "10"
+    },
+    {
       "name": "ANTWI - SEYDEWITZ KOFI ADOMAKO",
       "year": "10"
     },
     {
-      "name": "ANTWI TYRESE NHYIRABA TAKYI",
+      "name": "ASAMOAH AKOSUA NTRIWAA",
       "year": "10"
     },
     {
-      "name": "ASAMOAH JOHN",
-      "year": "10"
-    },
-    {
-      "name": "ASAMOAH THEODORA AFIA NTRIWAA",
+      "name": "ASAMOAH EMMANUEL",
       "year": "10"
     },
     {
@@ -389,7 +405,7 @@
       "year": "10"
     },
     {
-      "name": "AWANTUNGO DESTYNE ADELYINE BRYNE",
+      "name": "BATCHILLY HAGI",
       "year": "10"
     },
     {
@@ -397,99 +413,131 @@
       "year": "10"
     },
     {
-      "name": "CRANKSON CATHY EILEEN",
+      "name": "BRIMPONG MAAME SERWAA EVELYN",
       "year": "10"
+    },
+    {
+      "name": "BROBBEY NHYIRA YAW OWUSU",
+      "year": "10"
+    },
+    {
+      "name": "DZANKU DAVID ANNAS",
+      "year": "10"
+    },
+    {
+      "name": "MENSAH IRENE",
+      "year": "10"
+    },
+    {
+      "name": "MIGUEL E. OYIBO",
+      "year": "10"
+    },
+    {
+      "name": "NII ARMAH PETER CORNELIUS YEHOWAJORMOR",
+      "year": "10"
+    },
+    {
+      "name": "ORLEANS - THOMPSON NANA AMA NHYIRA",
+      "year": "10"
+    },
+    {
+      "name": "OWUSU GARRIET GYAMFI",
+      "year": "10"
+    },
+    {
+      "name": "SARKODIE FORSU LORDWAY",
+      "year": "10"
+    },
+    {
+      "name": "SARPONG KWABENA TWUM KUMANKUMA",
+      "year": "10"
+    },
+    {
+      "name": "YENTORGIT SOUNG ABIDAH",
+      "year": "10"
+    },
+    {
+      "name": "ZONGO BARKWEND JEREMY",
+      "year": "10"
+    },
+    {
+      "name": "ABDUL MALIK AYISHA",
+      "year": "11"
+    },
+    {
+      "name": "ADDO EUGELLA AKOSUA AGYAPOMAA",
+      "year": "11"
+    },
+    {
+      "name": "AFARI IDUN KAYLA",
+      "year": "11"
+    },
+    {
+      "name": "AFRIYIE NANA KWADWO NSIAH ASARE",
+      "year": "11"
+    },
+    {
+      "name": "AGYEMANG - AMOFAH MAAME BIRAGO",
+      "year": "11"
+    },
+    {
+      "name": "AKUOKO ADWOA KONADU",
+      "year": "11"
+    },
+    {
+      "name": "ANTWI TYRESE NHYIRABA TAKYI",
+      "year": "11"
+    },
+    {
+      "name": "ASAMOAH JOHN",
+      "year": "11"
+    },
+    {
+      "name": "ASAMOAH THEODORA AFIA NTRIWAA",
+      "year": "11"
+    },
+    {
+      "name": "ATUAHENE - ABABIO RAYMOND",
+      "year": "11"
+    },
+    {
+      "name": "ATUAHENE - AGYEMANG PHILIP",
+      "year": "11"
+    },
+    {
+      "name": "AWANTUNGO DESTYNE ADELYINE BRYNE",
+      "year": "11"
+    },
+    {
+      "name": "CRANKSON CATHY EILEEN",
+      "year": "11"
     },
     {
       "name": "DA - SILVA OWUSU PACHICA YAA",
-      "year": "10"
+      "year": "11"
     },
     {
       "name": "FRIMPONG BOADI CHRISTABEL OYE",
-      "year": "10"
+      "year": "11"
     },
     {
       "name": "FRIMPONG STEPHEN HENRY AWASIN",
-      "year": "10"
+      "year": "11"
     },
     {
       "name": "NKETIAH TRINITY ABENA - KWARTEMAA",
-      "year": "10"
+      "year": "11"
     },
     {
       "name": "NSIAH YAW",
-      "year": "10"
+      "year": "11"
     },
     {
       "name": "NYAME JENNIEVIRA",
-      "year": "10"
+      "year": "11"
     },
     {
       "name": "OGUAMA THANKGOD CHIBUEZE",
-      "year": "10"
-    },
-    {
-      "name": "YAMOAH AKWASI NHYIRABA",
-      "year": "10"
-    },
-    {
-      "name": "ABDUL - FATAWU KADIR SAMAKUSE",
-      "year": "11"
-    },
-    {
-      "name": "ADUSEI - POKU KWAKU ADUTWUM",
-      "year": "11"
-    },
-    {
-      "name": "AHMAD MERHI",
-      "year": "11"
-    },
-    {
-      "name": "ANTWI JOHN KOFI OSEI - TWUM",
-      "year": "11"
-    },
-    {
-      "name": "APPIAH NANNETTE ACHIAA",
-      "year": "11"
-    },
-    {
-      "name": "ARCHER AARON",
-      "year": "11"
-    },
-    {
-      "name": "ARTHUR SETH KWAKU BOTCHWEY",
-      "year": "11"
-    },
-    {
-      "name": "ASANTE VANESSA",
-      "year": "11"
-    },
-    {
-      "name": "AYINSOGYA EMMANUELLA AYAMGA",
-      "year": "11"
-    },
-    {
-      "name": "BAAH ERNESTINA FRIMPOMAH",
-      "year": "11"
-    },
-    {
-      "name": "GUIRO ABDOUL FATAO",
-      "year": "11"
-    },
-    {
-      "name": "JADHAV YASH AMBARUSHI",
-      "year": "11"
-    },
-    {
-      "name": "KODUAH ARIELLA ASEDA",
-      "year": "11"
-    },
-    {
-      "name": "LAMINU ZALIKA MOHAMMED",
-      "year": "11"
-    },
-    {
-      "name": "NII ARMAH JASON LARYEA YEHOWARDROMO",
       "year": "11"
     },
     {
@@ -497,12 +545,20 @@
       "year": "11"
     },
     {
-      "name": "SAM - ARTHUR MIGUEL",
+      "name": "YAMOAH AKWASI NHYIRABA",
       "year": "11"
     },
     {
-      "name": "TAMATEY BENEDICT TERKPER",
-      "year": "11"
+      "name": "ABDUL - FATAWU KADIR SAMAKUSE",
+      "year": "12"
+    },
+    {
+      "name": "ADUSEI - POKU KWAKU ADUTWUM",
+      "year": "12"
+    },
+    {
+      "name": "AHMAD MERHI",
+      "year": "12"
     },
     {
       "name": "ALI ZAKI MOHAMED MARYAM",
@@ -513,47 +569,91 @@
       "year": "12"
     },
     {
-      "name": "ARTHUR OTABIL SOLOMON",
+      "name": "ANTWI JOHN KOFI OSEI - TWUM",
       "year": "12"
+    },
+    {
+      "name": "APPIAH NANNETTE ACHIAA",
+      "year": "12"
+    },
+    {
+      "name": "APPIAH SERWAA ALEITHA",
+      "year": "12"
+    },
+    {
+      "name": "ARCHER AARON",
+      "year": "12"
+    },
+    {
+      "name": "ARTHUR SETH KWAKU BOTCHWEY",
+      "year": "12"
+    },
+    {
+      "name": "ASANTE VANESSA",
+      "year": "12"
+    },
+    {
+      "name": "AYINSOGYA EMMANUELLA AYAMGA",
+      "year": "12"
+    },
+    {
+      "name": "BAAH ERNESTINA FRIMPOMAH",
+      "year": "12"
+    },
+    {
+      "name": "GUIRO ABDOUL FATAO",
+      "year": "12"
+    },
+    {
+      "name": "JADHAV YASH AMBARUSHI",
+      "year": "12"
+    },
+    {
+      "name": "KODUAH ARIELLA ASEDA",
+      "year": "12"
+    },
+    {
+      "name": "LAMINU ZALIKA MOHAMMED",
+      "year": "12"
+    },
+    {
+      "name": "NII ARMAH JASON LARYEA YEHOWARDROMO",
+      "year": "12"
+    },
+    {
+      "name": "SAM - ARTHUR MIGUEL",
+      "year": "12"
+    },
+    {
+      "name": "TAMATEY BENEDICT TERKPER",
+      "year": "12"
+    },
+    {
+      "name": "ARTHUR OTABIL SOLOMON",
+      "year": "13"
     },
     {
       "name": "BOATENG WEILLA KONADU",
-      "year": "12"
+      "year": "13"
     },
     {
       "name": "ESHUN JOSIAH OHENEBA AFIRIYIE",
-      "year": "12"
+      "year": "13"
     },
     {
       "name": "MOHAMMED ISSAH",
-      "year": "12"
+      "year": "13"
     },
     {
       "name": "NABARE JOSEPH",
-      "year": "12"
+      "year": "13"
     },
     {
       "name": "NII ARMAH ANDREW YEHOWADA",
-      "year": "12"
+      "year": "13"
     },
     {
       "name": "OKYERE ANGELA NYAMEKYE",
-      "year": "12"
-    },
-    {
-      "name": "ASAMOAH EUNICE AMA SERWAA",
-      "year": "13"
-    },
-    {
-      "name": "JOEL TWUMASI ANKRAH",
-      "year": "13"
-    },
-    {
-      "name": "KUMAR KHUSHANT",
-      "year": "13"
-    },
-    {
-      "name": "LAMINU FATIMATU MOHAMMED",
       "year": "13"
     }
   ]
